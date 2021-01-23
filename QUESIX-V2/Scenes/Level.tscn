@@ -1,0 +1,397 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Sprites/blue-tile (2).png" type="Texture" id=1]
+[ext_resource path="res://Sprites/blue-tile (3).png" type="Texture" id=2]
+[ext_resource path="res://Sprites/blue-tile (5).png" type="Texture" id=3]
+[ext_resource path="res://Sprites/blue-tile (4).png" type="Texture" id=4]
+[ext_resource path="res://Themes/STEM_1_theme.tres" type="Theme" id=5]
+[ext_resource path="res://Script/GridCreator.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Script/LowerUI.gd" type="Script" id=8]
+[ext_resource path="res://Themes/Fonts/conthrax-sb.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Sprites/Containers@2.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Buttons@2.png" type="Texture" id=11]
+[ext_resource path="res://Script/LevelManager.gd" type="Script" id=12]
+
+[sub_resource type="TileSet" id=1]
+0/name = "blue-tile (5).png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 1, 0, 128, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "blue-tile (2).png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 1, 0, 128, 128 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+3/name = "blue-tile (3).png 3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 1, 0, 128, 128 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "blue-tile (4).png 4"
+4/texture = ExtResource( 4 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 1, 0, 128, 128 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 10 )
+region_rect = Rect2( 1414, 2214, 658, 128 )
+margin_left = 34.3767
+margin_right = 27.0102
+margin_top = 30.6934
+margin_bottom = 23.327
+expand_margin_top = 63.0
+expand_margin_bottom = 64.0
+modulate_color = Color( 0.4, 0.4, 0.4, 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 10 )
+region_rect = Rect2( 726, 1078, 616, 128 )
+margin_left = 33.0
+margin_right = 39.0
+margin_top = 44.0
+margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 10 )
+region_rect = Rect2( 726, 1230, 616, 222 )
+margin_left = 31.0249
+margin_right = 35.4571
+margin_top = 40.9972
+margin_bottom = 35.4571
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 11 )
+region_rect = Rect2( 1048, 329, 443, 116 )
+margin_left = 50.3507
+margin_right = 40.2805
+margin_top = 36.744
+margin_bottom = 28.3931
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+outline_size = 3
+outline_color = Color( 0.121569, 0.443137, 0.0392157, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 11 )
+region_rect = Rect2( 1542, 1406, 117, 116 )
+margin_left = 47.1989
+margin_right = 51.9634
+margin_top = 27.0102
+margin_bottom = 31.9212
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+outline_size = 4
+outline_color = Color( 0.496094, 0.100368, 0.0891418, 1 )
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 10 )
+region_rect = Rect2( 78, 668, 252, 252 )
+margin_left = 71.8178
+margin_right = 68.4775
+margin_top = 81.8389
+margin_bottom = 83.5091
+
+[sub_resource type="DynamicFont" id=10]
+size = 72
+font_data = ExtResource( 9 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 12 )
+timer_node = NodePath("Timer")
+time_label = NodePath("BotomCanvas/Time Panel/Label")
+
+[node name="TileMap" type="TileMap" parent="."]
+modulate = Color( 1, 1, 1, 0.368627 )
+position = Vector2( 0.282, 0 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131076, 4, 0, 131077, 4, 0, 131078, 4, 0, 131079, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 3, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 192, 1344 )
+script = ExtResource( 6 )
+__meta__ = {
+"_gizmo_extents_": 128.0
+}
+my_seed = 320
+
+[node name="Player" parent="Position2D" instance=ExtResource( 7 )]
+position = Vector2( 384, 0 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="BotomCanvas" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="BotomCanvas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer3" type="PanelContainer" parent="BotomCanvas/Control"]
+anchor_bottom = 1.78814e-07
+margin_top = 1648.84
+margin_right = 1152.0
+margin_bottom = 1798.86
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="HBoxContainer" parent="BotomCanvas/Control/PanelContainer3"]
+margin_left = 34.3767
+margin_top = 30.6934
+margin_right = 1124.99
+margin_bottom = 126.693
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+custom_constants/separation = -113
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
+margin_right = 96.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 96, 96 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 1 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
+margin_left = 139.0
+margin_right = 235.0
+margin_bottom = 96.0
+grow_vertical = 0
+rect_min_size = Vector2( 96, 96 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 1 )
+expand = true
+
+[node name="TextureRect3" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
+margin_left = 279.0
+margin_right = 375.0
+margin_bottom = 96.0
+grow_vertical = 0
+rect_min_size = Vector2( 96, 96 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 1 )
+expand = true
+
+[node name="TextureRect4" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
+margin_left = 418.0
+margin_right = 514.0
+margin_bottom = 96.0
+grow_vertical = 0
+rect_min_size = Vector2( 96, 96 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 1 )
+expand = true
+
+[node name="TextureRect5" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
+margin_left = 558.0
+margin_right = 654.0
+margin_bottom = 96.0
+grow_vertical = 0
+rect_min_size = Vector2( 96, 96 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 1 )
+expand = true
+
+[node name="TextureRect6" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
+margin_left = 697.0
+margin_right = 793.0
+margin_bottom = 96.0
+grow_vertical = 0
+rect_min_size = Vector2( 96, 96 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 1 )
+expand = true
+
+[node name="TextureRect7" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
+margin_left = 837.0
+margin_right = 933.0
+margin_bottom = 96.0
+grow_vertical = 0
+rect_min_size = Vector2( 96, 96 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 1 )
+expand = true
+
+[node name="ButtonsREct" type="PanelContainer" parent="BotomCanvas/Control"]
+margin_left = -1.49829
+margin_top = 1792.0
+margin_right = 1150.5
+margin_bottom = 2048.0
+grow_vertical = 0
+size_flags_vertical = 3
+theme = ExtResource( 5 )
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/Control/ButtonsREct"]
+margin_left = 33.0
+margin_top = 44.0
+margin_right = 1113.0
+margin_bottom = 224.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/separation = 25
+alignment = 1
+
+[node name="Left" type="Button" parent="BotomCanvas/Control/ButtonsREct/HBoxContainer"]
+margin_left = 214.0
+margin_right = 400.362
+margin_bottom = 180.0
+size_flags_vertical = 5
+text = "LEFT"
+
+[node name="Move" type="Button" parent="BotomCanvas/Control/ButtonsREct/HBoxContainer"]
+margin_left = 425.0
+margin_right = 634.362
+margin_bottom = 180.0
+grow_vertical = 0
+size_flags_vertical = 3
+text = "MOVE"
+
+[node name="Right" type="Button" parent="BotomCanvas/Control/ButtonsREct/HBoxContainer"]
+margin_left = 659.0
+margin_right = 864.362
+margin_bottom = 180.0
+size_flags_vertical = 5
+text = "RIGTH"
+
+[node name="PanelContainer2" type="PanelContainer" parent="BotomCanvas/Control"]
+margin_top = 1466.0
+margin_right = 1152.0
+margin_bottom = 1661.45
+grow_vertical = 0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/Control/PanelContainer2"]
+margin_left = 31.0249
+margin_top = 40.9972
+margin_right = 1116.54
+margin_bottom = 159.993
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 28
+alignment = 1
+
+[node name="Moverse" type="Button" parent="BotomCanvas/Control/PanelContainer2/HBoxContainer"]
+margin_left = 316.0
+margin_right = 617.631
+margin_bottom = 118.0
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "MOVERSE"
+
+[node name="Moverse2" type="Button" parent="BotomCanvas/Control/PanelContainer2/HBoxContainer"]
+margin_left = 645.0
+margin_right = 769.162
+margin_bottom = 118.0
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "x"
+
+[node name="Time Panel" type="Panel" parent="BotomCanvas"]
+anchor_right = 1.0
+margin_left = 771.21
+margin_top = -39.6569
+margin_right = -53.7897
+margin_bottom = 124.343
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BotomCanvas/Time Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -110.0
+margin_top = -101.374
+margin_right = 110.0
+margin_bottom = -14.3743
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 10 )
+text = "20 s"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="BotomCanvas/Control/ButtonsREct/HBoxContainer/Left" to="BotomCanvas/Control" method="_on_Left_pressed"]
+[connection signal="pressed" from="BotomCanvas/Control/ButtonsREct/HBoxContainer/Move" to="BotomCanvas/Control" method="_on_Move_pressed"]
+[connection signal="pressed" from="BotomCanvas/Control/ButtonsREct/HBoxContainer/Right" to="BotomCanvas/Control" method="_on_Right_pressed"]

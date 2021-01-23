@@ -1,0 +1,89 @@
+[gd_resource type="Theme" load_steps=17 format=2]
+
+[ext_resource path="res://Themes/Fonts/conthrax-sb.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Themes/Styles/container_styleboxtexture.tres" type="StyleBox" id=2]
+[ext_resource path="res://Sprites/Containers@2.png" type="Texture" id=3]
+[ext_resource path="res://Themes/Styles/buttons_styleboxtexture.tres" type="StyleBox" id=4]
+[ext_resource path="res://Themes/Styles/danger_styleboxtexture.tres" type="StyleBox" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/Buttons@2.png-30b5099f9f5bcab390d9302382022bef.stex"
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = SubResource( 2 )
+region_rect = Rect2( 564, 931, 442, 117 )
+margin_left = 32.6385
+margin_right = 32.723
+margin_top = 32.2353
+margin_bottom = 43.7055
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/Buttons@2.png-30b5099f9f5bcab390d9302382022bef.stex"
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = SubResource( 4 )
+region_rect = Rect2( 73, 611, 454, 128 )
+margin_left = 28.2494
+margin_right = 29.797
+margin_top = 29.797
+margin_bottom = 34.4396
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/Buttons@2.png-30b5099f9f5bcab390d9302382022bef.stex"
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = SubResource( 6 )
+region_rect = Rect2( 78, 774, 443, 117 )
+margin_left = 32.6385
+margin_right = 32.723
+margin_top = 32.2353
+margin_bottom = 43.7055
+
+[sub_resource type="StreamTexture" id=8]
+flags = 4
+load_path = "res://.import/Buttons@2.png-4a82af6cc04caecbecd31be986a9172f.stex"
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = SubResource( 8 )
+region_rect = Rect2( 78, 475, 443, 112 )
+margin_left = 28.2494
+margin_right = 29.797
+margin_top = 29.797
+margin_bottom = 34.4396
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 3 )
+region_rect = Rect2( 372, 668, 253, 252 )
+margin_left = 55.8469
+margin_right = 71.5986
+margin_top = 68.7347
+margin_bottom = 58.7109
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 1 )
+
+[resource]
+default_font = SubResource( 11 )
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.901961, 0.901961, 0.901961, 0.2 )
+Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 1 )
+Button/styles/Active = ExtResource( 4 )
+Button/styles/Danger = ExtResource( 5 )
+Button/styles/disabled = SubResource( 3 )
+Button/styles/focus = SubResource( 5 )
+Button/styles/hover = SubResource( 7 )
+Button/styles/normal = ExtResource( 4 )
+Button/styles/pressed = SubResource( 9 )
+Panel/styles/panel = ExtResource( 2 )
+PanelContainer/styles/panel = SubResource( 10 )

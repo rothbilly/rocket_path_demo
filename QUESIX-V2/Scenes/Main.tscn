@@ -1,0 +1,133 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Shaders/Main-Background.tres" type="Material" id=1]
+[ext_resource path="res://Themes/STEM_1_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Themes/Fonts/conthrax-sb.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Script/MainMenu.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/Buttons@2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/white.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/icons@2.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 56
+outline_size = 8
+outline_color = Color( 0.576471, 0.419608, 0.262745, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 7 )
+region_rect = Rect2( 1534, 329, 443, 116 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 56
+outline_size = 8
+outline_color = Color( 0.368627, 0.211765, 0.211765, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 7 )
+region_rect = Rect2( 1144, 1406, 117, 116 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 796, 278, 84, 84 )
+margin = Rect2( 6, 6, 12, 12 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -498.0
+margin_top = -851.0
+margin_right = 499.0
+margin_bottom = -121.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -426.5
+margin_top = 56.0
+margin_right = 426.5
+margin_bottom = 288.0
+size_flags_vertical = 0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 1 )
+text = "JUGAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -426.5
+margin_top = 320.49
+margin_right = 426.5
+margin_bottom = 471.49
+size_flags_vertical = 0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 1 )
+text = "DESBLOQUEABLES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -239.5
+margin_top = 495.817
+margin_right = 239.5
+margin_bottom = 646.817
+size_flags_vertical = 0
+theme = ExtResource( 3 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "SALIR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -183.899
+margin_top = 38.373
+margin_right = -23.899
+margin_bottom = 198.373
+grow_horizontal = 0
+grow_vertical = 0
+custom_styles/hover = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
+icon = SubResource( 5 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="Panel/Play" to="." method="_on_Play_button_down"]
+[connection signal="button_down" from="Panel/Exit" to="." method="_on_Exit_button_down"]
