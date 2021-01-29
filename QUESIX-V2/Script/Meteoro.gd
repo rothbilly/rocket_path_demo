@@ -1,5 +1,5 @@
-extends Area2D
-
+extends GridObject
+class_name Meteor
 
 var initialrotation 
 
@@ -10,3 +10,4 @@ func _ready():
 	initialrotation = rand_range(0, 360)
 	$Sprite.rotation_degrees = initialrotation
 	animation.play("Rotate")
+

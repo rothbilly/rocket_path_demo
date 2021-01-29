@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Sprites/blue-tile (2).png" type="Texture" id=1]
 [ext_resource path="res://Sprites/blue-tile (3).png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Sprites/Containers@2.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Buttons@2.png" type="Texture" id=11]
 [ext_resource path="res://Script/LevelManager.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/ProgramingPanel.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "blue-tile (5).png 0"
@@ -137,13 +138,42 @@ margin_top = 81.8389
 margin_bottom = 83.5091
 
 [sub_resource type="DynamicFont" id=10]
-size = 72
+size = 64
 font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 10 )
+region_rect = Rect2( 78, 951, 252, 253 )
+margin_left = 57.6
+margin_right = 52.0
+margin_top = 59.85
+margin_bottom = 61.75
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 11 )
+region_rect = Rect2( 1290, 129, 257, 79 )
+margin_left = 55.2277
+margin_right = 64.3168
+margin_top = 44.0
+margin_bottom = 49.1387
+
+[sub_resource type="StreamTexture" id=13]
+flags = 4
+load_path = "res://.import/Containers@2.png-f2ee646ff4727047283bd93dd5c46a87.stex"
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = SubResource( 13 )
+region_rect = Rect2( 84, 1240, 240, 241 )
+margin_left = 71.8178
+margin_right = 68.4775
+margin_top = 81.8389
+margin_bottom = 83.5091
+modulate_color = Color( 0.47451, 0.47451, 0.47451, 0.498039 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 12 )
 timer_node = NodePath("Timer")
-time_label = NodePath("BotomCanvas/Time Panel/Label")
+time_label = NodePath("BotomCanvas/TopCanvas/Time Panel/Label")
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color( 1, 1, 1, 0.368627 )
@@ -151,10 +181,11 @@ position = Vector2( 0.282, 0 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 128, 128 )
 format = 1
-tile_data = PoolIntArray( 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131076, 4, 0, 131077, 4, 0, 131078, 4, 0, 131079, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 3, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0 )
+tile_data = PoolIntArray( 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131076, 4, 0, 131077, 4, 0, 131078, 4, 0, 131079, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 192, 1344 )
+rotation = 0.000970288
 script = ExtResource( 6 )
 __meta__ = {
 "_gizmo_extents_": 128.0
@@ -163,14 +194,15 @@ my_seed = 320
 
 [node name="Player" parent="Position2D" instance=ExtResource( 7 )]
 position = Vector2( 384, 0 )
+tween_time = 0.4
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 10.0
 autostart = true
 
 [node name="BotomCanvas" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="BotomCanvas"]
+[node name="BottomCanvas" type="Control" parent="BotomCanvas"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
@@ -178,193 +210,180 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelContainer3" type="PanelContainer" parent="BotomCanvas/Control"]
-anchor_bottom = 1.78814e-07
-margin_top = 1648.84
-margin_right = 1152.0
-margin_bottom = 1798.86
+[node name="PanelContainer3" type="PanelContainer" parent="BotomCanvas/BottomCanvas"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -416.0
+margin_bottom = -240.0
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="HBoxContainer" parent="BotomCanvas/Control/PanelContainer3"]
+[node name="GridContainer" type="HBoxContainer" parent="BotomCanvas/BottomCanvas/PanelContainer3"]
 margin_left = 34.3767
-margin_top = 30.6934
+margin_top = 56.673
 margin_right = 1124.99
-margin_bottom = 126.693
+margin_bottom = 152.673
 grow_horizontal = 0
 grow_vertical = 0
-size_flags_horizontal = 3
+size_flags_horizontal = 7
 size_flags_vertical = 8
-custom_constants/separation = -113
+custom_constants/separation = 17
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
-margin_right = 96.0
+[node name="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer" instance=ExtResource( 13 )]
+margin_left = 45.0
+margin_right = 141.0
+
+[node name="Panel2" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
+margin_left = 158.0
+margin_right = 254.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 96, 96 )
-size_flags_horizontal = 2
-size_flags_vertical = 2
-texture = ExtResource( 1 )
-expand = true
 
-[node name="TextureRect2" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
-margin_left = 139.0
-margin_right = 235.0
+[node name="Panel3" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
+margin_left = 271.0
+margin_right = 367.0
 margin_bottom = 96.0
-grow_vertical = 0
 rect_min_size = Vector2( 96, 96 )
-size_flags_horizontal = 2
-size_flags_vertical = 2
-texture = ExtResource( 1 )
-expand = true
 
-[node name="TextureRect3" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
-margin_left = 279.0
-margin_right = 375.0
+[node name="Panel4" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
+margin_left = 384.0
+margin_right = 480.0
 margin_bottom = 96.0
-grow_vertical = 0
 rect_min_size = Vector2( 96, 96 )
-size_flags_horizontal = 2
-size_flags_vertical = 2
-texture = ExtResource( 1 )
-expand = true
 
-[node name="TextureRect4" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
-margin_left = 418.0
-margin_right = 514.0
+[node name="Panel5" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
+margin_left = 497.0
+margin_right = 593.0
 margin_bottom = 96.0
-grow_vertical = 0
 rect_min_size = Vector2( 96, 96 )
-size_flags_horizontal = 2
-size_flags_vertical = 2
-texture = ExtResource( 1 )
-expand = true
 
-[node name="TextureRect5" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
-margin_left = 558.0
-margin_right = 654.0
+[node name="Panel6" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
+margin_left = 610.0
+margin_right = 706.0
 margin_bottom = 96.0
-grow_vertical = 0
 rect_min_size = Vector2( 96, 96 )
-size_flags_horizontal = 2
-size_flags_vertical = 2
-texture = ExtResource( 1 )
-expand = true
 
-[node name="TextureRect6" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
-margin_left = 697.0
-margin_right = 793.0
+[node name="Panel7" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
+margin_left = 723.0
+margin_right = 819.0
 margin_bottom = 96.0
-grow_vertical = 0
 rect_min_size = Vector2( 96, 96 )
-size_flags_horizontal = 2
-size_flags_vertical = 2
-texture = ExtResource( 1 )
-expand = true
 
-[node name="TextureRect7" type="TextureRect" parent="BotomCanvas/Control/PanelContainer3/GridContainer"]
-margin_left = 837.0
-margin_right = 933.0
+[node name="Panel8" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
+margin_left = 836.0
+margin_right = 932.0
 margin_bottom = 96.0
-grow_vertical = 0
 rect_min_size = Vector2( 96, 96 )
-size_flags_horizontal = 2
-size_flags_vertical = 2
-texture = ExtResource( 1 )
-expand = true
 
-[node name="ButtonsREct" type="PanelContainer" parent="BotomCanvas/Control"]
-margin_left = -1.49829
-margin_top = 1792.0
-margin_right = 1150.5
-margin_bottom = 2048.0
+[node name="Panel9" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
+margin_left = 949.0
+margin_right = 1045.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 96, 96 )
+
+[node name="ButtonsRect" type="PanelContainer" parent="BotomCanvas/BottomCanvas"]
+anchor_top = 0.890625
+anchor_right = 1.0
+anchor_bottom = 1.00537
 grow_vertical = 0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/Control/ButtonsREct"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/BottomCanvas/ButtonsRect"]
 margin_left = 33.0
 margin_top = 44.0
 margin_right = 1113.0
-margin_bottom = 224.0
+margin_bottom = 202.998
 grow_horizontal = 0
 grow_vertical = 0
 custom_constants/separation = 25
 alignment = 1
 
-[node name="Left" type="Button" parent="BotomCanvas/Control/ButtonsREct/HBoxContainer"]
-margin_left = 214.0
-margin_right = 400.362
-margin_bottom = 180.0
+[node name="Left" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer"]
+margin_left = 215.0
+margin_right = 401.362
+margin_bottom = 158.0
 size_flags_vertical = 5
 text = "LEFT"
 
-[node name="Move" type="Button" parent="BotomCanvas/Control/ButtonsREct/HBoxContainer"]
-margin_left = 425.0
-margin_right = 634.362
-margin_bottom = 180.0
+[node name="Move" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer"]
+margin_left = 426.0
+margin_right = 635.362
+margin_bottom = 158.0
 grow_vertical = 0
 size_flags_vertical = 3
 text = "MOVE"
 
-[node name="Right" type="Button" parent="BotomCanvas/Control/ButtonsREct/HBoxContainer"]
-margin_left = 659.0
-margin_right = 864.362
-margin_bottom = 180.0
+[node name="Right" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer"]
+margin_left = 660.0
+margin_right = 865.362
+margin_bottom = 158.0
 size_flags_vertical = 5
 text = "RIGTH"
 
-[node name="PanelContainer2" type="PanelContainer" parent="BotomCanvas/Control"]
-margin_top = 1466.0
-margin_right = 1152.0
-margin_bottom = 1661.45
+[node name="PanelContainer2" type="PanelContainer" parent="BotomCanvas/BottomCanvas"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -624.0
+margin_bottom = -443.546
 grow_vertical = 0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/Control/PanelContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/BottomCanvas/PanelContainer2"]
 margin_left = 31.0249
 margin_top = 40.9972
 margin_right = 1116.54
-margin_bottom = 159.993
+margin_bottom = 144.997
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 28
 alignment = 1
 
-[node name="Moverse" type="Button" parent="BotomCanvas/Control/PanelContainer2/HBoxContainer"]
+[node name="Moverse" type="Button" parent="BotomCanvas/BottomCanvas/PanelContainer2/HBoxContainer"]
 margin_left = 316.0
 margin_right = 617.631
-margin_bottom = 118.0
+margin_bottom = 104.137
 custom_styles/normal = SubResource( 5 )
 custom_fonts/font = SubResource( 6 )
 text = "MOVERSE"
 
-[node name="Moverse2" type="Button" parent="BotomCanvas/Control/PanelContainer2/HBoxContainer"]
+[node name="Moverse2" type="Button" parent="BotomCanvas/BottomCanvas/PanelContainer2/HBoxContainer"]
 margin_left = 645.0
 margin_right = 769.162
-margin_bottom = 118.0
+margin_bottom = 104.0
 custom_styles/normal = SubResource( 7 )
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "x"
 
-[node name="Time Panel" type="Panel" parent="BotomCanvas"]
+[node name="TopCanvas" type="Control" parent="BotomCanvas"]
 anchor_right = 1.0
-margin_left = 771.21
-margin_top = -39.6569
-margin_right = -53.7897
-margin_bottom = 124.343
+anchor_bottom = 1.0
+margin_bottom = -2048.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time Panel" type="Panel" parent="BotomCanvas/TopCanvas"]
+anchor_right = 1.0
+margin_left = 680.0
+margin_top = -40.0
+margin_right = -216.0
+margin_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
@@ -374,15 +393,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="BotomCanvas/Time Panel"]
+[node name="Label" type="Label" parent="BotomCanvas/TopCanvas/Time Panel"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -110.0
-margin_top = -101.374
-margin_right = 110.0
-margin_bottom = -14.3743
+margin_left = -106.5
+margin_top = -108.0
+margin_right = 113.5
+margin_bottom = -20.9996
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 10 )
@@ -392,6 +411,73 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="BotomCanvas/Control/ButtonsREct/HBoxContainer/Left" to="BotomCanvas/Control" method="_on_Left_pressed"]
-[connection signal="pressed" from="BotomCanvas/Control/ButtonsREct/HBoxContainer/Move" to="BotomCanvas/Control" method="_on_Move_pressed"]
-[connection signal="pressed" from="BotomCanvas/Control/ButtonsREct/HBoxContainer/Right" to="BotomCanvas/Control" method="_on_Right_pressed"]
+
+[node name="Time Panel3" type="Panel" parent="BotomCanvas/TopCanvas"]
+anchor_right = 1.0
+margin_left = 48.0
+margin_top = -40.0
+margin_right = -752.0
+margin_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+custom_styles/panel = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BotomCanvas/TopCanvas/Time Panel3"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -106.0
+margin_top = -108.0
+margin_right = 81.0
+margin_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 10 )
+text = "4"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton" type="Button" parent="BotomCanvas/TopCanvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -184.0
+margin_top = -80.0
+margin_right = -33.0
+margin_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+custom_styles/normal = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Panel" parent="BotomCanvas/TopCanvas"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -163.5
+margin_top = 160.0
+margin_right = 163.5
+margin_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+custom_styles/panel = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer/Left" to="BotomCanvas/BottomCanvas" method="_on_Left_pressed"]
+[connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer/Move" to="BotomCanvas/BottomCanvas" method="_on_Move_pressed"]
+[connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer/Right" to="BotomCanvas/BottomCanvas" method="_on_Right_pressed"]

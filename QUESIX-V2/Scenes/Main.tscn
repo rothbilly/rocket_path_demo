@@ -1,38 +1,148 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Shaders/Main-Background.tres" type="Material" id=1]
+[ext_resource path="res://Sprites/TITLE.png" type="Texture" id=2]
 [ext_resource path="res://Themes/STEM_1_theme.tres" type="Theme" id=3]
 [ext_resource path="res://Themes/Fonts/conthrax-sb.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Sprites/Frame 65.png" type="Texture" id=5]
 [ext_resource path="res://Script/MainMenu.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/Buttons@2.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/white.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/icons@2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/par-3.png" type="Texture" id=10]
+[ext_resource path="res://Themes/Fonts/Conthrax Book.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://Themes/Fonts/Conthrax Heavy.otf" type="DynamicFontData" id=12]
+[ext_resource path="res://Data/testData.tres" type="Resource" id=13]
+[ext_resource path="res://Themes/Fonts/font-resources/new_dynamicfont.tres" type="DynamicFont" id=14]
+[ext_resource path="res://Sprites/Containers@2.png" type="Texture" id=15]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 1 ), 0.0, -0.069056, 0, 0, Vector2( 1, 0.0295454 ), -3.39504, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+width = 1024
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+lifetime_randomness = 0.17
+emission_shape = 1
+emission_sphere_radius = 27.85
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 4.76
+initial_velocity_random = 1.0
+angular_velocity = -98.95
+angular_velocity_random = 0.95
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 43.68
+radial_accel_random = 0.71
+scale = 1.5
+scale_curve = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 56
 outline_size = 8
 outline_color = Color( 0.576471, 0.419608, 0.262745, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 7 )
 region_rect = Rect2( 1534, 329, 443, 116 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=6]
 size = 56
 outline_size = 8
 outline_color = Color( 0.368627, 0.211765, 0.211765, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 7 )
 region_rect = Rect2( 1144, 1406, 117, 116 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 796, 278, 84, 84 )
 margin = Rect2( 6, 6, 12, 12 )
+
+[sub_resource type="CanvasItemMaterial" id=9]
+blend_mode = 1
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -3.05227, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+width = 1024
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+emission_shape = 2
+emission_box_extents = Vector3( 320, 120, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 33.44
+angle = 93.2
+angle_random = 0.75
+scale_curve = SubResource( 11 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 15 )
+region_rect = Rect2( 372, 951, 253, 253 )
+margin_left = 36.7554
+margin_right = 34.688
+margin_top = 32.6585
+margin_bottom = 34.0494
+
+[sub_resource type="DynamicFont" id=14]
+size = 56
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 56
+outline_size = 7
+outline_color = Color( 0.945098, 0.580392, 0.337255, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="Shader" id=16]
+code = "shader_type canvas_item;
+uniform float ScalarUniform;
+uniform sampler2D MainTexture;
+
+
+
+void vertex() {
+	vec3 uv_map = vec3(UV,0.0);
+	float transition_var = ScalarUniform;
+
+	vec3 transtition = vec3(0, transition_var, 0);
+
+	vec3 UV_output = uv_map + transtition;
+
+// Output:0
+	UV = UV_output.xy;
+
+}
+
+void fragment() {
+// Input:3
+	vec3 n_out3p0 = vec3(0.0, UV.y, 0.0);
+
+// Output:0
+	COLOR.rgb = n_out3p0;
+
+}
+
+void light() {
+// Output:0
+
+}"
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = SubResource( 16 )
+shader_param/ScalarUniform = null
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -41,16 +151,27 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+player_data = ExtResource( 13 )
+name_setup = NodePath("namesetup")
+display_text = NodePath("Panel2/Playerlabel")
 
 [node name="Background" type="TextureRect" parent="."]
 material = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.51978
+margin_right = 2.51978
 texture = ExtResource( 8 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+position = Vector2( 243.121, 723.193 )
+amount = 6
+process_material = SubResource( 3 )
+texture = ExtResource( 10 )
 
 [node name="Panel" type="Panel" parent="."]
 anchor_left = 0.5
@@ -75,7 +196,7 @@ margin_right = 426.5
 margin_bottom = 288.0
 size_flags_vertical = 0
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "JUGAR"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -90,7 +211,7 @@ margin_right = 426.5
 margin_bottom = 471.49
 size_flags_vertical = 0
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "DESBLOQUEABLES"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -105,8 +226,8 @@ margin_right = 239.5
 margin_bottom = 646.817
 size_flags_vertical = 0
 theme = ExtResource( 3 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "SALIR"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -121,13 +242,125 @@ margin_right = -23.899
 margin_bottom = 198.373
 grow_horizontal = 0
 grow_vertical = 0
-custom_styles/hover = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 1 )
-icon = SubResource( 5 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 4 )
+icon = SubResource( 8 )
 expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+margin_left = 126.163
+margin_top = 332.96
+margin_right = -105.837
+margin_bottom = 812.96
+rect_min_size = Vector2( 920, 480 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particles2D" type="Particles2D" parent="TextureRect"]
+material = SubResource( 9 )
+position = Vector2( 527.722, 212.461 )
+process_material = SubResource( 12 )
+texture = ExtResource( 5 )
+
+[node name="Panel2" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -239.0
+margin_top = -1047.5
+margin_right = 281.0
+margin_bottom = -899.498
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Playerlabel" type="Label" parent="Panel2"]
+margin_left = 36.7554
+margin_top = 32.6585
+margin_right = 485.312
+margin_bottom = 113.659
+custom_fonts/font = ExtResource( 14 )
+text = "Bienvendo de nuevo: "
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="namesetup" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.717647 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="namesetup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -450.0
+margin_top = -211.0
+margin_right = 450.0
+margin_bottom = 173.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="namesetup/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -421.0
+margin_top = 32.0362
+margin_right = 421.0
+margin_bottom = 165.036
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 14 )
+text = "AVATAR"
+max_length = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="namesetup/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -221.52
+margin_top = 187.502
+margin_right = 216.48
+margin_bottom = 342.502
+custom_fonts/font = SubResource( 15 )
+text = "ENVIAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="button_down" from="Panel/Play" to="." method="_on_Play_button_down"]
 [connection signal="button_down" from="Panel/Exit" to="." method="_on_Exit_button_down"]
+[connection signal="text_entered" from="namesetup/Panel/LineEdit" to="." method="_enter_nickname"]
+[connection signal="pressed" from="namesetup/Panel/Button" to="." method="_enter_nickname"]

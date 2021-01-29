@@ -9,10 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "GameData",
+"language": "GDScript",
+"path": "res://Script/GameData.gd"
+}, {
 "base": "Position2D",
 "class": "GridCreator",
 "language": "GDScript",
 "path": "res://Script/GridCreator.gd"
+}, {
+"base": "Area2D",
+"class": "GridObject",
+"language": "GDScript",
+"path": "res://Script/GridObject.gd"
+}, {
+"base": "GridObject",
+"class": "Meteor",
+"language": "GDScript",
+"path": "res://Script/Meteoro.gd"
 }, {
 "base": "Node2D",
 "class": "Player",
@@ -20,7 +35,10 @@ _global_script_classes=[ {
 "path": "res://Script/Player.gd"
 } ]
 _global_script_class_icons={
+"GameData": "",
 "GridCreator": "",
+"GridObject": "",
+"Meteor": "",
 "Player": ""
 }
 
@@ -38,7 +56,6 @@ EventController="*res://Script/EventController.gd"
 
 window/size/width=1152
 window/size/height=2048
-window/size/fullscreen=true
 window/size/test_width=576
 window/size/test_height=1024
 window/dpi/allow_hidpi=true

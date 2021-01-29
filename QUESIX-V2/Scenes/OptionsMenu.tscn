@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Themes/STEM_1_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Sprites/Containers@2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/icons@2.png" type="Texture" id=3]
+[ext_resource path="res://Themes/Fonts/font-resources/conthrax-120.tres" type="DynamicFont" id=4]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 728, 82, 614, 108 )
+margin_left = 34.4018
+margin_right = 35.9518
+margin_top = 36.3465
+expand_margin_left = 12.0
+expand_margin_right = 12.0
+expand_margin_top = 12.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 653, 397, 101, 100 )
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.541176 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PausePanel" type="Panel" parent="ColorRect"]
+margin_left = 168.0
+margin_top = 674.926
+margin_right = 984.0
+margin_bottom = 1698.93
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="ColorRect/PausePanel"]
+anchor_right = 1.0
+margin_bottom = 160.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/PausePanel/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -2.1189
+margin_bottom = -2.1189
+custom_fonts/font = ExtResource( 4 )
+text = "PAUSA"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/PausePanel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -219.941
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ColorRect/PausePanel/MarginContainer"]
+margin_left = 282.0
+margin_top = 49.0
+margin_right = 533.362
+margin_bottom = 168.941
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_constants/hseparation = 0
+text = "  SALIR  "
+
+[node name="TextureButton" type="TextureButton" parent="ColorRect/PausePanel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -65.0
+margin_top = -63.0
+margin_right = 67.0
+margin_bottom = 61.0
+texture_normal = SubResource( 2 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
