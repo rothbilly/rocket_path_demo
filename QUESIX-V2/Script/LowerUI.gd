@@ -1,6 +1,5 @@
 extends Control
 
-
 func _ready():
 	pass
 
@@ -15,3 +14,8 @@ func _on_Move_pressed():
 
 func _on_Right_pressed():
 	EventController.emit_signal("right_button", true)
+
+
+func _on_Moverse_pressed():
+	
+	pass # Replace with function body.

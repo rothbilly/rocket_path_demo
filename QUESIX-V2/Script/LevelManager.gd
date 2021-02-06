@@ -1,5 +1,6 @@
 extends Node2D
 
+
 export(NodePath) onready var timer_node = get_node(timer_node) as Timer 
 export(NodePath) onready var time_label = get_node(time_label) as Label
 
@@ -12,5 +13,5 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	EventController.emit_signal("update_timer")
-	pass # Replace with function body.
+	##$Background/Bg1.get_material().set_shader_param("velocity",-1)
 

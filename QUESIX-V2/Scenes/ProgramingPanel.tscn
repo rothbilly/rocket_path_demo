@@ -1,9 +1,267 @@
-[gd_scene format=2]
+[gd_scene load_steps=29 format=2]
 
-[node name="Panel" type="Panel"]
-margin_right = 96.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
-__meta__ = {
-"_edit_use_anchors_": false
+[ext_resource path="res://Sprites/directions.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/MovementIndicator.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/frames.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Clear"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 0.133972, 0.164939 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 72 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.287175, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Enter"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4 ),
+"transitions": PoolRealArray( 0.217638, 1, 8.87655 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Halo:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.15932, 2.2974 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Grow"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.217638, 4.14106 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Nothing"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Halo:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.678431, 0.494118, 0.494118, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Selected"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Halo:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Halo:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Shrink"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.233258, 4.75682 ),
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Clear"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Enter"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "Grow"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "Nothing"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "Nothing"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Selected"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "Shrink"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=24]
+states/Clear/node = SubResource( 7 )
+states/Clear/position = Vector2( 524, 46 )
+states/Enter/node = SubResource( 8 )
+states/Enter/position = Vector2( 524, 204 )
+states/Grow/node = SubResource( 9 )
+states/Grow/position = Vector2( 869, 293 )
+states/Hover/node = SubResource( 10 )
+states/Hover/position = Vector2( 869, 387 )
+states/Nothing/node = SubResource( 11 )
+states/Nothing/position = Vector2( 869, 189 )
+states/Selected/node = SubResource( 12 )
+states/Selected/position = Vector2( 874, 51 )
+states/Shrink/node = SubResource( 13 )
+states/Shrink/position = Vector2( 1054, 293 )
+transitions = [ "Clear", "Enter", SubResource( 14 ), "Enter", "Nothing", SubResource( 15 ), "Shrink", "Nothing", SubResource( 16 ), "Grow", "Hover", SubResource( 17 ), "Hover", "Shrink", SubResource( 18 ), "Nothing", "Grow", SubResource( 19 ), "Nothing", "Clear", SubResource( 20 ), "Nothing", "Selected", SubResource( 21 ), "Selected", "Nothing", SubResource( 22 ), "Enter", "Selected", SubResource( 23 ) ]
+start_node = "Enter"
+graph_offset = Vector2( -185, -26 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=25]
+
+[node name="Panel" type="Sprite"]
+position = Vector2( 64.0975, 66.2165 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 4 )
+vframes = 2
+hframes = 5
+script = ExtResource( 3 )
+animation_tree = NodePath("AnimationTree")
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 5
+frame = 1
+
+[node name="Halo" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+scale = Vector2( 1.16249, 1.16249 )
+texture = ExtResource( 4 )
+vframes = 2
+hframes = 5
+frame = 5
+region_rect = Rect2( 0, 0, 640, 256 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Clear = SubResource( 1 )
+anims/Enter = SubResource( 2 )
+anims/Grow = SubResource( 3 )
+anims/Nothing = SubResource( 4 )
+anims/Selected = SubResource( 5 )
+anims/Shrink = SubResource( 6 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 24 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 25 )

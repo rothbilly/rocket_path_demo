@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Sprites/blue-tile (2).png" type="Texture" id=1]
 [ext_resource path="res://Sprites/blue-tile (3).png" type="Texture" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Sprites/Buttons@2.png" type="Texture" id=11]
 [ext_resource path="res://Script/LevelManager.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/ProgramingPanel.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Sprites/stars.png" type="Texture" id=14]
+[ext_resource path="res://Shaders/Stars.tres" type="Material" id=15]
+[ext_resource path="res://Scenes/AlertFrame.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/EnergyBar.gd" type="Script" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "blue-tile (5).png 0"
@@ -74,14 +78,20 @@
 
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 10 )
-region_rect = Rect2( 1414, 2214, 658, 128 )
+region_rect = Rect2( 372, 384, 253, 253 )
 margin_left = 34.3767
 margin_right = 27.0102
-margin_top = 30.6934
+margin_top = 29.4657
 margin_bottom = 23.327
-expand_margin_top = 63.0
-expand_margin_bottom = 64.0
-modulate_color = Color( 0.4, 0.4, 0.4, 1 )
+modulate_color = Color( 1, 1, 1, 0.458824 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=17]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=18]
 
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 10 )
@@ -175,16 +185,35 @@ script = ExtResource( 12 )
 timer_node = NodePath("Timer")
 time_label = NodePath("BotomCanvas/TopCanvas/Time Panel/Label")
 
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Bg1" type="TextureRect" parent="Background"]
+modulate = Color( 1, 1, 1, 0.784314 )
+self_modulate = Color( 0.498039, 0.498039, 0.498039, 1 )
+material = ExtResource( 15 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -16.0
+margin_right = 24.0
+margin_bottom = 16.0
+texture = ExtResource( 14 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TileMap" type="TileMap" parent="."]
-modulate = Color( 1, 1, 1, 0.368627 )
+modulate = Color( 1, 1, 1, 0.486275 )
 position = Vector2( 0.282, 0 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 128, 128 )
 format = 1
-tile_data = PoolIntArray( 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131076, 4, 0, 131077, 4, 0, 131078, 4, 0, 131079, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0 )
+tile_data = PoolIntArray( 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 655365, 4, 0, 655366, 4, 0, 655367, 4, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 192, 1344 )
+position = Vector2( 192, 1472 )
 rotation = 0.000970288
 script = ExtResource( 6 )
 __meta__ = {
@@ -196,100 +225,99 @@ my_seed = 320
 position = Vector2( 384, 0 )
 tween_time = 0.4
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Position2D/Player"]
+remote_path = NodePath("../../Alert")
+update_rotation = false
+update_scale = false
+
+[node name="Alert" type="Position2D" parent="Position2D"]
+position = Vector2( 384, 0 )
+
+[node name="AlertFrame" parent="Position2D/Alert" instance=ExtResource( 16 )]
+visible = false
+position = Vector2( 0, -200 )
+rotation = -0.000970288
+z_index = 3
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
 
 [node name="BotomCanvas" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="BottomCanvas" type="Control" parent="BotomCanvas"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 1408.0
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelContainer3" type="PanelContainer" parent="BotomCanvas/BottomCanvas"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -416.0
-margin_bottom = -240.0
+[node name="EnergyContainer" type="PanelContainer" parent="BotomCanvas/BottomCanvas"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -570.0
+margin_top = -1224.0
+margin_right = 571.0
+margin_bottom = -1080.0
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 2 )
+script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+movements = [ NodePath("Panel"), NodePath("Panel2"), NodePath("Panel3"), NodePath("Panel4"), NodePath("Panel5"), NodePath("Panel6"), NodePath("Panel7"), NodePath("Panel8") ]
 
-[node name="GridContainer" type="HBoxContainer" parent="BotomCanvas/BottomCanvas/PanelContainer3"]
-margin_left = 34.3767
-margin_top = 56.673
-margin_right = 1124.99
-margin_bottom = 152.673
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 7
-size_flags_vertical = 8
-custom_constants/separation = 17
-alignment = 1
+[node name="Panel" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
+position = Vector2( 91.6, 73.6 )
+scale = Vector2( 0.9, 0.9 )
 
-[node name="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer" instance=ExtResource( 13 )]
-margin_left = 45.0
-margin_right = 141.0
+[node name="Panel2" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
+position = Vector2( 227.6, 73.6 )
+scale = Vector2( 0.9, 0.9 )
 
-[node name="Panel2" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
-margin_left = 158.0
-margin_right = 254.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+[node name="Panel3" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
+position = Vector2( 363.6, 73.6 )
+scale = Vector2( 0.9, 0.9 )
 
-[node name="Panel3" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
-margin_left = 271.0
-margin_right = 367.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+[node name="Panel4" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
+position = Vector2( 499.6, 73.6 )
+scale = Vector2( 0.9, 0.9 )
 
-[node name="Panel4" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
-margin_left = 384.0
-margin_right = 480.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+[node name="AnimationTree" parent="BotomCanvas/BottomCanvas/EnergyContainer/Panel4" index="3"]
+parameters/playback = SubResource( 15 )
 
-[node name="Panel5" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
-margin_left = 497.0
-margin_right = 593.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+[node name="Panel5" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
+position = Vector2( 635.6, 73.6 )
+scale = Vector2( 0.9, 0.9 )
 
-[node name="Panel6" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
-margin_left = 610.0
-margin_right = 706.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+[node name="Panel6" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
+position = Vector2( 771.6, 73.6 )
+scale = Vector2( 0.9, 0.9 )
 
-[node name="Panel7" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
-margin_left = 723.0
-margin_right = 819.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+[node name="AnimationTree" parent="BotomCanvas/BottomCanvas/EnergyContainer/Panel6" index="3"]
+parameters/playback = SubResource( 16 )
 
-[node name="Panel8" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
-margin_left = 836.0
-margin_right = 932.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+[node name="Panel7" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
+position = Vector2( 907.6, 73.6 )
+scale = Vector2( 0.9, 0.9 )
 
-[node name="Panel9" type="Panel" parent="BotomCanvas/BottomCanvas/PanelContainer3/GridContainer"]
-margin_left = 949.0
-margin_right = 1045.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+[node name="AnimationTree" parent="BotomCanvas/BottomCanvas/EnergyContainer/Panel7" index="3"]
+parameters/playback = SubResource( 17 )
+
+[node name="Panel8" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
+position = Vector2( 1043.6, 73.6 )
+scale = Vector2( 0.9, 0.9 )
+
+[node name="AnimationTree" parent="BotomCanvas/BottomCanvas/EnergyContainer/Panel8" index="3"]
+parameters/playback = SubResource( 18 )
 
 [node name="ButtonsRect" type="PanelContainer" parent="BotomCanvas/BottomCanvas"]
-anchor_top = 0.890625
+anchor_top = 0.65
 anchor_right = 1.0
-anchor_bottom = 1.00537
+anchor_bottom = 1.00469
 grow_vertical = 0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
@@ -302,7 +330,7 @@ __meta__ = {
 margin_left = 33.0
 margin_top = 44.0
 margin_right = 1113.0
-margin_bottom = 202.998
+margin_bottom = 195.002
 grow_horizontal = 0
 grow_vertical = 0
 custom_constants/separation = 25
@@ -311,14 +339,14 @@ alignment = 1
 [node name="Left" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer"]
 margin_left = 215.0
 margin_right = 401.362
-margin_bottom = 158.0
+margin_bottom = 151.0
 size_flags_vertical = 5
 text = "LEFT"
 
 [node name="Move" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer"]
 margin_left = 426.0
 margin_right = 635.362
-margin_bottom = 158.0
+margin_bottom = 151.0
 grow_vertical = 0
 size_flags_vertical = 3
 text = "MOVE"
@@ -326,16 +354,17 @@ text = "MOVE"
 [node name="Right" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer"]
 margin_left = 660.0
 margin_right = 865.362
-margin_bottom = 158.0
+margin_bottom = 151.0
 size_flags_vertical = 5
 text = "RIGTH"
 
 [node name="PanelContainer2" type="PanelContainer" parent="BotomCanvas/BottomCanvas"]
+self_modulate = Color( 0.545098, 0.545098, 0.545098, 1 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -624.0
-margin_bottom = -443.546
+margin_top = -407.0
+margin_bottom = -212.0
 grow_vertical = 0
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
@@ -346,7 +375,7 @@ __meta__ = {
 margin_left = 31.0249
 margin_top = 40.9972
 margin_right = 1116.54
-margin_bottom = 144.997
+margin_bottom = 159.543
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -356,7 +385,7 @@ alignment = 1
 [node name="Moverse" type="Button" parent="BotomCanvas/BottomCanvas/PanelContainer2/HBoxContainer"]
 margin_left = 316.0
 margin_right = 617.631
-margin_bottom = 104.137
+margin_bottom = 118.0
 custom_styles/normal = SubResource( 5 )
 custom_fonts/font = SubResource( 6 )
 text = "MOVERSE"
@@ -364,7 +393,7 @@ text = "MOVERSE"
 [node name="Moverse2" type="Button" parent="BotomCanvas/BottomCanvas/PanelContainer2/HBoxContainer"]
 margin_left = 645.0
 margin_right = 769.162
-margin_bottom = 104.0
+margin_bottom = 118.0
 custom_styles/normal = SubResource( 7 )
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -372,24 +401,23 @@ text = "x"
 
 [node name="TopCanvas" type="Control" parent="BotomCanvas"]
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -2048.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Time Panel" type="Panel" parent="BotomCanvas/TopCanvas"]
 anchor_right = 1.0
-margin_left = 680.0
-margin_top = -40.0
-margin_right = -216.0
-margin_bottom = 124.0
+margin_left = 840.0
+margin_top = 24.0
+margin_right = -56.0
+margin_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
 custom_styles/panel = SubResource( 9 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -398,10 +426,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -106.5
-margin_top = -108.0
-margin_right = 113.5
-margin_bottom = -20.9996
+margin_left = -104.0
+margin_top = -100.0
+margin_right = 116.0
+margin_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 10 )
@@ -412,12 +440,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Time Panel3" type="Panel" parent="BotomCanvas/TopCanvas"]
-anchor_right = 1.0
-margin_left = 48.0
-margin_top = -40.0
-margin_right = -752.0
-margin_bottom = 124.0
+[node name="Points2" type="Panel" parent="BotomCanvas/TopCanvas"]
+margin_left = 33.0
+margin_top = 24.0
+margin_right = 385.0
+margin_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
@@ -427,15 +454,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="BotomCanvas/TopCanvas/Time Panel3"]
+[node name="Label" type="Label" parent="BotomCanvas/TopCanvas/Points2"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -106.0
-margin_top = -108.0
-margin_right = 81.0
-margin_bottom = -21.0
+margin_left = -136.0
+margin_top = -96.0
+margin_right = -64.0
+margin_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 10 )
@@ -447,12 +474,12 @@ __meta__ = {
 }
 
 [node name="PauseButton" type="Button" parent="BotomCanvas/TopCanvas"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -184.0
-margin_top = -80.0
-margin_right = -33.0
-margin_bottom = 128.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -75.0
+margin_top = 24.0
+margin_right = 76.0
+margin_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
@@ -481,3 +508,12 @@ __meta__ = {
 [connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer/Left" to="BotomCanvas/BottomCanvas" method="_on_Left_pressed"]
 [connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer/Move" to="BotomCanvas/BottomCanvas" method="_on_Move_pressed"]
 [connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer/Right" to="BotomCanvas/BottomCanvas" method="_on_Right_pressed"]
+[connection signal="pressed" from="BotomCanvas/BottomCanvas/PanelContainer2/HBoxContainer/Moverse" to="BotomCanvas/BottomCanvas" method="_on_Moverse_pressed"]
+
+[editable path="BotomCanvas/BottomCanvas/EnergyContainer/Panel4"]
+
+[editable path="BotomCanvas/BottomCanvas/EnergyContainer/Panel6"]
+
+[editable path="BotomCanvas/BottomCanvas/EnergyContainer/Panel7"]
+
+[editable path="BotomCanvas/BottomCanvas/EnergyContainer/Panel8"]

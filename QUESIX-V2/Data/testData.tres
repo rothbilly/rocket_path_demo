@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource( 1 )
-player_nick_name = "frano"
+player_nick_name = "nicolas"
 game_coins = 0

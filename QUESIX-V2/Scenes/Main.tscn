@@ -152,8 +152,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 player_data = ExtResource( 13 )
-name_setup = NodePath("namesetup")
-display_text = NodePath("Panel2/Playerlabel")
+name_setup = NodePath("Namesetup")
+display_text = NodePath("Welcome label/Playerlabel")
 
 [node name="Background" type="TextureRect" parent="."]
 material = ExtResource( 1 )
@@ -271,26 +271,26 @@ position = Vector2( 527.722, 212.461 )
 process_material = SubResource( 12 )
 texture = ExtResource( 5 )
 
-[node name="Panel2" type="PanelContainer" parent="."]
+[node name="Welcome label" type="PanelContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -239.0
-margin_top = -1047.5
-margin_right = 281.0
-margin_bottom = -899.498
+margin_left = -273.0
+margin_top = -1047.0
+margin_right = 315.0
+margin_bottom = -899.0
 size_flags_horizontal = 3
 custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Playerlabel" type="Label" parent="Panel2"]
+[node name="Playerlabel" type="Label" parent="Welcome label"]
 margin_left = 36.7554
-margin_top = 32.6585
-margin_right = 485.312
-margin_bottom = 113.659
+margin_top = 53.6585
+margin_right = 553.312
+margin_bottom = 92.6585
 custom_fonts/font = ExtResource( 14 )
 text = "Bienvendo de nuevo: "
 align = 1
@@ -300,7 +300,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="namesetup" type="ColorRect" parent="."]
+[node name="Namesetup" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -309,7 +309,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="namesetup"]
+[node name="Panel" type="Panel" parent="Namesetup"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -323,7 +323,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LineEdit" type="LineEdit" parent="namesetup/Panel"]
+[node name="LineEdit" type="LineEdit" parent="Namesetup/Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -421.0
@@ -338,7 +338,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="namesetup/Panel"]
+[node name="Button" type="Button" parent="Namesetup/Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -221.52
@@ -362,5 +362,5 @@ __meta__ = {
 }
 [connection signal="button_down" from="Panel/Play" to="." method="_on_Play_button_down"]
 [connection signal="button_down" from="Panel/Exit" to="." method="_on_Exit_button_down"]
-[connection signal="text_entered" from="namesetup/Panel/LineEdit" to="." method="_enter_nickname"]
-[connection signal="pressed" from="namesetup/Panel/Button" to="." method="_enter_nickname"]
+[connection signal="text_entered" from="Namesetup/Panel/LineEdit" to="." method="_enter_nickname"]
+[connection signal="pressed" from="Namesetup/Panel/Button" to="." method="_enter_nickname"]

@@ -67,7 +67,7 @@ func _check_next_pos() -> bool:
 	if front_ray.is_colliding():
 		var next_object = front_ray.get_collider() as Area2D
 		if next_object is Meteor:
-			print("is a meteor")
-		return false
+			EventController.emit_signal("failed_to_move",0)
+			return false
 	return true
 

@@ -29,3 +29,4 @@ func _enter_nickname():
 		name_setup.hide()
 		display_text.text = "Bienvendo de nuevo " + player_data.player_nick_name
 		
+	

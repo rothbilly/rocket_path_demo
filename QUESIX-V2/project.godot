@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Script/Meteoro.gd"
 }, {
+"base": "Sprite",
+"class": "MovementIndicator",
+"language": "GDScript",
+"path": "res://Scenes/MovementIndicator.gd"
+}, {
 "base": "Node2D",
 "class": "Player",
 "language": "GDScript",
@@ -39,6 +44,7 @@ _global_script_class_icons={
 "GridCreator": "",
 "GridObject": "",
 "Meteor": "",
+"MovementIndicator": "",
 "Player": ""
 }
 
@@ -56,6 +62,7 @@ EventController="*res://Script/EventController.gd"
 
 window/size/width=1152
 window/size/height=2048
+window/size/always_on_top=true
 window/size/test_width=576
 window/size/test_height=1024
 window/dpi/allow_hidpi=true
