@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Sprites/dialog_frame.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/simbols-sprites.png" type="Texture" id=2]
-[ext_resource path="res://AlertFrame.gd" type="Script" id=3]
+[ext_resource path="res://Script/AlertFrame.gd" type="Script" id=3]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Open"

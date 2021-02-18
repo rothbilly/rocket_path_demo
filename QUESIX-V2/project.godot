@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "GridObject",
+"class": "Coin",
+"language": "GDScript",
+"path": "res://Scenes/Coin.gd"
+}, {
 "base": "Resource",
 "class": "GameData",
 "language": "GDScript",
@@ -32,7 +37,7 @@ _global_script_classes=[ {
 "base": "Sprite",
 "class": "MovementIndicator",
 "language": "GDScript",
-"path": "res://Scenes/MovementIndicator.gd"
+"path": "res://Script/MovementIndicator.gd"
 }, {
 "base": "Node2D",
 "class": "Player",
@@ -40,6 +45,7 @@ _global_script_classes=[ {
 "path": "res://Script/Player.gd"
 } ]
 _global_script_class_icons={
+"Coin": "",
 "GameData": "",
 "GridCreator": "",
 "GridObject": "",
@@ -72,5 +78,6 @@ window/stretch/aspect="keep_width"
 
 [rendering]
 
+vram_compression/import_etc=true
 environment/default_clear_color=Color( 0.121569, 0.0941176, 0.160784, 1 )
 environment/default_environment="res://default_env.tres"

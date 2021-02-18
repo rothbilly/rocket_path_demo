@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Shaders/Main-Background.tres" type="Material" id=1]
 [ext_resource path="res://Sprites/TITLE.png" type="Texture" id=2]
@@ -48,35 +48,52 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 7 )
+region_rect = Rect2( 1534, 774, 443, 117 )
+margin_left = 18.4161
+margin_right = 33.1489
+margin_top = 27.0102
+margin_bottom = 29.4657
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 7 )
+region_rect = Rect2( 1534, 475, 443, 116 )
+margin_left = 34.0094
+margin_right = 34.0094
+margin_top = 25.8471
+margin_bottom = 14.9641
+modulate_color = Color( 0.705882, 0.705882, 0.705882, 1 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 7 )
 region_rect = Rect2( 1534, 329, 443, 116 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 size = 56
 outline_size = 8
 outline_color = Color( 0.368627, 0.211765, 0.211765, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 7 )
 region_rect = Rect2( 1144, 1406, 117, 116 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 796, 278, 84, 84 )
 margin = Rect2( 6, 6, 12, 12 )
 
-[sub_resource type="CanvasItemMaterial" id=9]
+[sub_resource type="CanvasItemMaterial" id=11]
 blend_mode = 1
 
-[sub_resource type="Curve" id=10]
+[sub_resource type="Curve" id=12]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -3.05227, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=11]
+[sub_resource type="CurveTexture" id=13]
 width = 1024
-curve = SubResource( 10 )
+curve = SubResource( 12 )
 
-[sub_resource type="ParticlesMaterial" id=12]
+[sub_resource type="ParticlesMaterial" id=14]
 emission_shape = 2
 emission_box_extents = Vector3( 320, 120, 1 )
 flag_disable_z = true
@@ -86,9 +103,9 @@ orbit_velocity_random = 0.0
 radial_accel = 33.44
 angle = 93.2
 angle_random = 0.75
-scale_curve = SubResource( 11 )
+scale_curve = SubResource( 13 )
 
-[sub_resource type="StyleBoxTexture" id=13]
+[sub_resource type="StyleBoxTexture" id=15]
 texture = ExtResource( 15 )
 region_rect = Rect2( 372, 951, 253, 253 )
 margin_left = 36.7554
@@ -96,17 +113,17 @@ margin_right = 34.688
 margin_top = 32.6585
 margin_bottom = 34.0494
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=16]
 size = 56
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=17]
 size = 56
 outline_size = 7
 outline_color = Color( 0.945098, 0.580392, 0.337255, 1 )
 font_data = ExtResource( 12 )
 
-[sub_resource type="Shader" id=16]
+[sub_resource type="Shader" id=18]
 code = "shader_type canvas_item;
 uniform float ScalarUniform;
 uniform sampler2D MainTexture;
@@ -140,8 +157,8 @@ void light() {
 
 }"
 
-[sub_resource type="ShaderMaterial" id=17]
-shader = SubResource( 16 )
+[sub_resource type="ShaderMaterial" id=19]
+shader = SubResource( 18 )
 shader_param/ScalarUniform = null
 
 [node name="MainMenu" type="Control"]
@@ -157,7 +174,8 @@ display_text = NodePath("Welcome label/Playerlabel")
 
 [node name="Background" type="TextureRect" parent="."]
 material = ExtResource( 1 )
-anchor_right = 1.0
+anchor_left = -0.00218731
+anchor_right = 0.997813
 anchor_bottom = 1.0
 margin_left = 2.51978
 margin_right = 2.51978
@@ -193,7 +211,7 @@ anchor_right = 0.5
 margin_left = -426.5
 margin_top = 56.0
 margin_right = 426.5
-margin_bottom = 288.0
+margin_bottom = 286.0
 size_flags_vertical = 0
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -226,8 +244,10 @@ margin_right = 239.5
 margin_bottom = 646.817
 size_flags_vertical = 0
 theme = ExtResource( 3 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "SALIR"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -242,10 +262,10 @@ margin_right = -23.899
 margin_bottom = 198.373
 grow_horizontal = 0
 grow_vertical = 0
-custom_styles/hover = SubResource( 7 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
 custom_fonts/font = SubResource( 4 )
-icon = SubResource( 8 )
+icon = SubResource( 10 )
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -266,9 +286,9 @@ __meta__ = {
 }
 
 [node name="Particles2D" type="Particles2D" parent="TextureRect"]
-material = SubResource( 9 )
+material = SubResource( 11 )
 position = Vector2( 527.722, 212.461 )
-process_material = SubResource( 12 )
+process_material = SubResource( 14 )
 texture = ExtResource( 5 )
 
 [node name="Welcome label" type="PanelContainer" parent="."]
@@ -276,12 +296,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -273.0
+margin_left = -351.0
 margin_top = -1047.0
-margin_right = 315.0
+margin_right = 394.0
 margin_bottom = -899.0
 size_flags_horizontal = 3
-custom_styles/panel = SubResource( 13 )
+custom_styles/panel = SubResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -289,7 +309,7 @@ __meta__ = {
 [node name="Playerlabel" type="Label" parent="Welcome label"]
 margin_left = 36.7554
 margin_top = 53.6585
-margin_right = 553.312
+margin_right = 710.312
 margin_bottom = 92.6585
 custom_fonts/font = ExtResource( 14 )
 text = "Bienvendo de nuevo: "
@@ -331,7 +351,7 @@ margin_top = 32.0362
 margin_right = 421.0
 margin_bottom = 165.036
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 16 )
 text = "AVATAR"
 max_length = 12
 __meta__ = {
@@ -345,7 +365,7 @@ margin_left = -221.52
 margin_top = 187.502
 margin_right = 216.48
 margin_bottom = 342.502
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 17 )
 text = "ENVIAR"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -353,7 +373,7 @@ __meta__ = {
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 17 )
+material = SubResource( 19 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3

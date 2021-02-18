@@ -2,10 +2,12 @@ extends Position2D
 class_name GridCreator
 
 const METEOR: PackedScene = preload("res://Scenes/Meteoro.tscn")
+const COIN: PackedScene = preload("res://Scenes/Coin.tscn")
 
 const TILE_DISTANCE: int = 128
 var grid_position: Vector2
 var main_dir: Dictionary = {}
+
 var player_pos = Vector2(3,0)
 var steps: int 
 
@@ -20,17 +22,19 @@ func _init():
 
 func _ready():
 	EventController.connect("update_timer", self, "_update_all")
+	EventController.connect("_on_movement_state", self,"_update_all")
 	#EventController.connect("check_next_grid_object",self,"return_grid_object")
 	
 	randomize()
 	#print(random_seed)
 	generate_grid()
 	
-func _update_all():
-	steps +=1
-	move_grid()
-	add_row()
-	delete_row()
+func _update_all(state):
+	if state == false:
+		steps +=1
+		move_grid()
+		add_row()
+		delete_row()
 
 func generate_grid(): ## generate a dictionary, gridmap generator 
 	for i in range(row_gridsize):
@@ -43,6 +47,8 @@ func generate_grid(): ## generate a dictionary, gridmap generator
 			if block == 0:
 				main_dir[pos] = _InstanceItem(METEOR, pos)
 				##_InstanceItem(METEOR, Vector2(i,-j))
+			elif block ==1:
+				main_dir[pos] = _InstanceItem(COIN, pos)
 			else:
 				main_dir[pos] = null
 
@@ -52,6 +58,8 @@ func add_row():
 		var pos = Vector2(i,-render_column)
 		if randi()%5 == 0:
 			main_dir[pos] = _InstanceItem(METEOR, Vector2(i,-render_column+steps))
+		elif randi()%5 == 1:
+			main_dir[pos] = _InstanceItem(COIN, Vector2(i,-render_column+steps))
 		else:
 			main_dir[pos] = null
 	render_column += 1

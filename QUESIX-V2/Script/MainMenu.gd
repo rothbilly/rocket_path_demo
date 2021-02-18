@@ -21,8 +21,9 @@ func _on_Play_button_down():
 	yield(get_tree().create_timer(1.3),"timeout")
 	get_tree().change_scene("res://Scenes/Level.tscn")
 	
+	
 func _enter_nickname():
-	var nick_name = $namesetup/Panel/LineEdit.text
+	var nick_name = $Namesetup/Panel/LineEdit.text
 	print(nick_name)
 	if nick_name != "":
 		player_data.player_name_setup(nick_name)

@@ -1,7 +1,7 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Sprites/directions.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/MovementIndicator.gd" type="Script" id=3]
+[ext_resource path="res://Script/MovementIndicator.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/frames.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
@@ -162,80 +162,100 @@ tracks/0/keys = {
 }
 
 [sub_resource type="AnimationNodeAnimation" id=7]
-animation = "Clear"
-
-[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Enter"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
-animation = "Grow"
-
-[sub_resource type="AnimationNodeAnimation" id=10]
-animation = "Nothing"
-
-[sub_resource type="AnimationNodeAnimation" id=11]
-animation = "Nothing"
-
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Selected"
 
+[sub_resource type="AnimationNodeOneShot" id=9]
+
+[sub_resource type="AnimationNodeBlendTree" id=10]
+graph_offset = Vector2( -400, -84 )
+nodes/Animation/node = SubResource( 8 )
+nodes/Animation/position = Vector2( -160, 220 )
+"nodes/Animation 2/node" = SubResource( 7 )
+"nodes/Animation 2/position" = Vector2( -160, 20 )
+nodes/OneShot/node = SubResource( 9 )
+nodes/OneShot/position = Vector2( 74, 112 )
+node_connections = [ "output", 0, "OneShot", "OneShot", 0, "Animation 2", "OneShot", 1, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "Clear"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Enter"
+
 [sub_resource type="AnimationNodeAnimation" id=13]
+animation = "Grow"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "Nothing"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "Nothing"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "Selected"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "Shrink"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=14]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=17]
-switch_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=21]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=22]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id=24]
-states/Clear/node = SubResource( 7 )
+[sub_resource type="AnimationNodeStateMachine" id=28]
+states/BlendTree/node = SubResource( 10 )
+states/BlendTree/position = Vector2( 539, 337 )
+states/Clear/node = SubResource( 11 )
 states/Clear/position = Vector2( 524, 46 )
-states/Enter/node = SubResource( 8 )
+states/Enter/node = SubResource( 12 )
 states/Enter/position = Vector2( 524, 204 )
-states/Grow/node = SubResource( 9 )
+states/Grow/node = SubResource( 13 )
 states/Grow/position = Vector2( 869, 293 )
-states/Hover/node = SubResource( 10 )
+states/Hover/node = SubResource( 14 )
 states/Hover/position = Vector2( 869, 387 )
-states/Nothing/node = SubResource( 11 )
+states/Nothing/node = SubResource( 15 )
 states/Nothing/position = Vector2( 869, 189 )
-states/Selected/node = SubResource( 12 )
+states/Selected/node = SubResource( 16 )
 states/Selected/position = Vector2( 874, 51 )
-states/Shrink/node = SubResource( 13 )
+states/Shrink/node = SubResource( 17 )
 states/Shrink/position = Vector2( 1054, 293 )
-transitions = [ "Clear", "Enter", SubResource( 14 ), "Enter", "Nothing", SubResource( 15 ), "Shrink", "Nothing", SubResource( 16 ), "Grow", "Hover", SubResource( 17 ), "Hover", "Shrink", SubResource( 18 ), "Nothing", "Grow", SubResource( 19 ), "Nothing", "Clear", SubResource( 20 ), "Nothing", "Selected", SubResource( 21 ), "Selected", "Nothing", SubResource( 22 ), "Enter", "Selected", SubResource( 23 ) ]
+transitions = [ "Clear", "Enter", SubResource( 18 ), "Enter", "Nothing", SubResource( 19 ), "Shrink", "Nothing", SubResource( 20 ), "Grow", "Hover", SubResource( 21 ), "Hover", "Shrink", SubResource( 22 ), "Nothing", "Grow", SubResource( 23 ), "Nothing", "Clear", SubResource( 24 ), "Nothing", "Selected", SubResource( 25 ), "Selected", "Nothing", SubResource( 26 ), "Enter", "Selected", SubResource( 27 ) ]
 start_node = "Enter"
-graph_offset = Vector2( -185, -26 )
+graph_offset = Vector2( 66, 45 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=25]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=29]
 
 [node name="Panel" type="Sprite"]
 position = Vector2( 64.0975, 66.2165 )
-scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 4 )
 vframes = 2
 hframes = 5
 script = ExtResource( 3 )
 animation_tree = NodePath("AnimationTree")
+frame_state = 5
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -245,7 +265,7 @@ frame = 1
 
 [node name="Halo" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-scale = Vector2( 1.16249, 1.16249 )
+scale = Vector2( 1.1467, 1.1467 )
 texture = ExtResource( 4 )
 vframes = 2
 hframes = 5
@@ -261,7 +281,8 @@ anims/Selected = SubResource( 5 )
 anims/Shrink = SubResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 24 )
+tree_root = SubResource( 28 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 25 )
+parameters/playback = SubResource( 29 )
+parameters/BlendTree/OneShot/active = true

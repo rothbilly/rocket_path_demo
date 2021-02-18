@@ -16,7 +16,7 @@
 [ext_resource path="res://Sprites/stars.png" type="Texture" id=14]
 [ext_resource path="res://Shaders/Stars.tres" type="Material" id=15]
 [ext_resource path="res://Scenes/AlertFrame.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/EnergyBar.gd" type="Script" id=17]
+[ext_resource path="res://Sprites/item-point.png" type="Texture" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "blue-tile (5).png 0"
@@ -85,15 +85,15 @@ margin_top = 29.4657
 margin_bottom = 23.327
 modulate_color = Color( 1, 1, 1, 0.458824 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=17]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=18]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=6]
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 10 )
 region_rect = Rect2( 726, 1078, 616, 128 )
 margin_left = 33.0
@@ -101,7 +101,7 @@ margin_right = 39.0
 margin_top = 44.0
 margin_bottom = 32.0
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 10 )
 region_rect = Rect2( 726, 1230, 616, 222 )
 margin_left = 31.0249
@@ -109,7 +109,7 @@ margin_right = 35.4571
 margin_top = 40.9972
 margin_bottom = 35.4571
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 11 )
 region_rect = Rect2( 1048, 329, 443, 116 )
 margin_left = 50.3507
@@ -117,7 +117,7 @@ margin_right = 40.2805
 margin_top = 36.744
 margin_bottom = 28.3931
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=10]
 size = 32
 outline_size = 3
 outline_color = Color( 0.121569, 0.443137, 0.0392157, 1 )
@@ -125,7 +125,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 9 )
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=11]
 texture = ExtResource( 11 )
 region_rect = Rect2( 1542, 1406, 117, 116 )
 margin_left = 47.1989
@@ -133,13 +133,13 @@ margin_right = 51.9634
 margin_top = 27.0102
 margin_bottom = 31.9212
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=12]
 size = 32
 outline_size = 4
 outline_color = Color( 0.496094, 0.100368, 0.0891418, 1 )
 font_data = ExtResource( 9 )
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=13]
 texture = ExtResource( 10 )
 region_rect = Rect2( 78, 668, 252, 252 )
 margin_left = 71.8178
@@ -147,11 +147,11 @@ margin_right = 68.4775
 margin_top = 81.8389
 margin_bottom = 83.5091
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=14]
 size = 64
 font_data = ExtResource( 9 )
 
-[sub_resource type="StyleBoxTexture" id=11]
+[sub_resource type="StyleBoxTexture" id=15]
 texture = ExtResource( 10 )
 region_rect = Rect2( 78, 951, 252, 253 )
 margin_left = 57.6
@@ -159,7 +159,7 @@ margin_right = 52.0
 margin_top = 59.85
 margin_bottom = 61.75
 
-[sub_resource type="StyleBoxTexture" id=12]
+[sub_resource type="StyleBoxTexture" id=16]
 texture = ExtResource( 11 )
 region_rect = Rect2( 1290, 129, 257, 79 )
 margin_left = 55.2277
@@ -167,12 +167,12 @@ margin_right = 64.3168
 margin_top = 44.0
 margin_bottom = 49.1387
 
-[sub_resource type="StreamTexture" id=13]
+[sub_resource type="StreamTexture" id=17]
 flags = 4
 load_path = "res://.import/Containers@2.png-f2ee646ff4727047283bd93dd5c46a87.stex"
 
-[sub_resource type="StyleBoxTexture" id=14]
-texture = SubResource( 13 )
+[sub_resource type="StyleBoxTexture" id=18]
+texture = SubResource( 17 )
 region_rect = Rect2( 84, 1240, 240, 241 )
 margin_left = 71.8178
 margin_right = 68.4775
@@ -184,6 +184,8 @@ modulate_color = Color( 0.47451, 0.47451, 0.47451, 0.498039 )
 script = ExtResource( 12 )
 timer_node = NodePath("Timer")
 time_label = NodePath("BotomCanvas/TopCanvas/Time Panel/Label")
+points_label = NodePath("BotomCanvas/TopCanvas/Points2/Label")
+tween_node = NodePath("BotomCanvas/TopCanvas/Points2/Tween")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -254,148 +256,164 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+movements = [ NodePath("EnergyContainer/Panel"), NodePath("EnergyContainer/Panel2"), NodePath("EnergyContainer/Panel3"), NodePath("EnergyContainer/Panel4"), NodePath("EnergyContainer/Panel5"), NodePath("EnergyContainer/Panel6"), NodePath("EnergyContainer/Panel7"), NodePath("EnergyContainer/Panel8") ]
 
 [node name="EnergyContainer" type="PanelContainer" parent="BotomCanvas/BottomCanvas"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -570.0
-margin_top = -1224.0
-margin_right = 571.0
-margin_bottom = -1080.0
+margin_left = -550.0
+margin_top = -1248.0
+margin_right = 553.0
+margin_bottom = -1104.0
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 2 )
-script = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-movements = [ NodePath("Panel"), NodePath("Panel2"), NodePath("Panel3"), NodePath("Panel4"), NodePath("Panel5"), NodePath("Panel6"), NodePath("Panel7"), NodePath("Panel8") ]
 
 [node name="Panel" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
-position = Vector2( 91.6, 73.6 )
+position = Vector2( 76.7002, 71.6 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="Panel2" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
-position = Vector2( 227.6, 73.6 )
+position = Vector2( 212.7, 71.6 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="Panel3" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
-position = Vector2( 363.6, 73.6 )
+position = Vector2( 348.7, 71.6 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="Panel4" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
-position = Vector2( 499.6, 73.6 )
+position = Vector2( 484.7, 71.6 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="AnimationTree" parent="BotomCanvas/BottomCanvas/EnergyContainer/Panel4" index="3"]
-parameters/playback = SubResource( 15 )
+parameters/playback = SubResource( 3 )
 
 [node name="Panel5" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
-position = Vector2( 635.6, 73.6 )
+position = Vector2( 620.7, 71.6 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="Panel6" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
-position = Vector2( 771.6, 73.6 )
+position = Vector2( 756.7, 71.6 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="AnimationTree" parent="BotomCanvas/BottomCanvas/EnergyContainer/Panel6" index="3"]
-parameters/playback = SubResource( 16 )
+parameters/playback = SubResource( 4 )
 
 [node name="Panel7" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
-position = Vector2( 907.6, 73.6 )
+position = Vector2( 892.7, 71.6 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="AnimationTree" parent="BotomCanvas/BottomCanvas/EnergyContainer/Panel7" index="3"]
-parameters/playback = SubResource( 17 )
+parameters/playback = SubResource( 5 )
 
 [node name="Panel8" parent="BotomCanvas/BottomCanvas/EnergyContainer" instance=ExtResource( 13 )]
-position = Vector2( 1043.6, 73.6 )
+position = Vector2( 1028.7, 71.6 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="AnimationTree" parent="BotomCanvas/BottomCanvas/EnergyContainer/Panel8" index="3"]
-parameters/playback = SubResource( 18 )
+parameters/playback = SubResource( 6 )
 
-[node name="ButtonsRect" type="PanelContainer" parent="BotomCanvas/BottomCanvas"]
-anchor_top = 0.65
+[node name="ButtonsRect" type="Panel" parent="BotomCanvas/BottomCanvas"]
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.00469
+anchor_bottom = 1.0
+margin_left = 0.282
+margin_top = -485.0
+margin_right = 0.281982
+margin_bottom = 3.00165
 grow_vertical = 0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/BottomCanvas/ButtonsRect"]
-margin_left = 33.0
-margin_top = 44.0
-margin_right = 1113.0
-margin_bottom = 195.002
+[node name="MarginContainer" type="MarginContainer" parent="BotomCanvas/BottomCanvas/ButtonsRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 224.0
+margin_bottom = -0.00134277
+custom_constants/margin_right = 50
+custom_constants/margin_top = 30
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/BottomCanvas/ButtonsRect/MarginContainer"]
+margin_left = 50.0
+margin_top = 30.0
+margin_right = 1102.0
+margin_bottom = 234.0
 grow_horizontal = 0
 grow_vertical = 0
 custom_constants/separation = 25
 alignment = 1
 
-[node name="Left" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer"]
-margin_left = 215.0
-margin_right = 401.362
-margin_bottom = 151.0
+[node name="Left" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/MarginContainer/HBoxContainer"]
+margin_left = 201.0
+margin_right = 387.362
+margin_bottom = 204.0
 size_flags_vertical = 5
 text = "LEFT"
 
-[node name="Move" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer"]
-margin_left = 426.0
-margin_right = 635.362
-margin_bottom = 151.0
+[node name="Move" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/MarginContainer/HBoxContainer"]
+margin_left = 412.0
+margin_right = 621.362
+margin_bottom = 204.0
 grow_vertical = 0
 size_flags_vertical = 3
 text = "MOVE"
 
-[node name="Right" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer"]
-margin_left = 660.0
-margin_right = 865.362
-margin_bottom = 151.0
+[node name="Right" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/MarginContainer/HBoxContainer"]
+margin_left = 646.0
+margin_right = 851.362
+margin_bottom = 204.0
 size_flags_vertical = 5
 text = "RIGTH"
 
-[node name="PanelContainer2" type="PanelContainer" parent="BotomCanvas/BottomCanvas"]
+[node name="PanelContainer2" type="PanelContainer" parent="BotomCanvas/BottomCanvas/ButtonsRect"]
 self_modulate = Color( 0.545098, 0.545098, 0.545098, 1 )
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -407.0
-margin_bottom = -212.0
+margin_left = 33.0
+margin_top = 44.0
+margin_right = -39.0
+margin_bottom = 224.454
 grow_vertical = 0
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/BottomCanvas/PanelContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/BottomCanvas/ButtonsRect/PanelContainer2"]
 margin_left = 31.0249
 margin_top = 40.9972
-margin_right = 1116.54
-margin_bottom = 159.543
+margin_right = 1044.54
+margin_bottom = 144.997
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 28
 alignment = 1
 
-[node name="Moverse" type="Button" parent="BotomCanvas/BottomCanvas/PanelContainer2/HBoxContainer"]
-margin_left = 316.0
-margin_right = 617.631
-margin_bottom = 118.0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
+[node name="Moverse" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/PanelContainer2/HBoxContainer"]
+margin_left = 280.0
+margin_right = 581.631
+margin_bottom = 104.137
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "MOVERSE"
 
-[node name="Moverse2" type="Button" parent="BotomCanvas/BottomCanvas/PanelContainer2/HBoxContainer"]
-margin_left = 645.0
-margin_right = 769.162
-margin_bottom = 118.0
-custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 8 )
+[node name="Limpiar" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/PanelContainer2/HBoxContainer"]
+margin_left = 609.0
+margin_right = 733.162
+margin_bottom = 104.0
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "x"
 
@@ -415,7 +433,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
-custom_styles/panel = SubResource( 9 )
+custom_styles/panel = SubResource( 13 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -432,7 +450,7 @@ margin_right = 116.0
 margin_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 14 )
 text = "20 s"
 align = 1
 valign = 1
@@ -441,37 +459,40 @@ __meta__ = {
 }
 
 [node name="Points2" type="Panel" parent="BotomCanvas/TopCanvas"]
-margin_left = 33.0
+margin_left = 25.832
 margin_top = 24.0
-margin_right = 385.0
+margin_right = 377.832
 margin_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
-custom_styles/panel = SubResource( 11 )
+custom_styles/panel = SubResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="BotomCanvas/TopCanvas/Points2"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -136.0
-margin_top = -96.0
-margin_right = -64.0
-margin_bottom = -16.0
+margin_right = -93.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 10 )
-text = "4"
+custom_fonts/font = SubResource( 14 )
+text = "0"
 align = 2
 valign = 1
+clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="BotomCanvas/TopCanvas/Points2"]
+position = Vector2( 302.968, 56.3514 )
+scale = Vector2( 0.54281, 0.54281 )
+texture = ExtResource( 17 )
+
+[node name="Tween" type="Tween" parent="BotomCanvas/TopCanvas/Points2"]
 
 [node name="PauseButton" type="Button" parent="BotomCanvas/TopCanvas"]
 anchor_left = 0.5
@@ -484,7 +505,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
-custom_styles/normal = SubResource( 12 )
+custom_styles/normal = SubResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -500,15 +521,16 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
-custom_styles/panel = SubResource( 14 )
+custom_styles/panel = SubResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer/Left" to="BotomCanvas/BottomCanvas" method="_on_Left_pressed"]
-[connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer/Move" to="BotomCanvas/BottomCanvas" method="_on_Move_pressed"]
-[connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/HBoxContainer/Right" to="BotomCanvas/BottomCanvas" method="_on_Right_pressed"]
-[connection signal="pressed" from="BotomCanvas/BottomCanvas/PanelContainer2/HBoxContainer/Moverse" to="BotomCanvas/BottomCanvas" method="_on_Moverse_pressed"]
+[connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/MarginContainer/HBoxContainer/Left" to="BotomCanvas/BottomCanvas" method="_on_Left_pressed"]
+[connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/MarginContainer/HBoxContainer/Move" to="BotomCanvas/BottomCanvas" method="_on_Move_pressed"]
+[connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/MarginContainer/HBoxContainer/Right" to="BotomCanvas/BottomCanvas" method="_on_Right_pressed"]
+[connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/PanelContainer2/HBoxContainer/Moverse" to="BotomCanvas/BottomCanvas" method="_on_Moverse_pressed"]
+[connection signal="pressed" from="BotomCanvas/BottomCanvas/ButtonsRect/PanelContainer2/HBoxContainer/Limpiar" to="BotomCanvas/BottomCanvas" method="_on_Limpiar_pressed"]
 
 [editable path="BotomCanvas/BottomCanvas/EnergyContainer/Panel4"]
 

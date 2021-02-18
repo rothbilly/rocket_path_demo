@@ -38,6 +38,7 @@ tracks/1/keys = {
 [node name="Meteoro" type="Area2D" groups=[
 "Meteor",
 ]]
+collision_mask = 2147483649
 script = ExtResource( 2 )
 tween_node_reference = NodePath("Tween")
 
@@ -49,7 +50,5 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Rotate = SubResource( 2 )
-
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
 [node name="Tween" type="Tween" parent="."]
