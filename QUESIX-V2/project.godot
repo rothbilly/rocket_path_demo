@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "GridObject",
 "class": "Coin",
 "language": "GDScript",
-"path": "res://Scenes/Coin.gd"
+"path": "res://Script/Coin.gd"
 }, {
 "base": "Resource",
 "class": "GameData",
@@ -57,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Quesix-V2"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Scenes/Levels/Main.tscn"
 boot_splash/bg_color=Color( 0.0588235, 0.054902, 0.0666667, 1 )
 
 [autoload]

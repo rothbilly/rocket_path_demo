@@ -116,6 +116,14 @@ margin_right = 35.4571
 margin_top = 40.9972
 margin_bottom = 35.4571
 
+[sub_resource type="DynamicFont" id=11]
+size = 32
+outline_size = 3
+outline_color = Color( 0.121569, 0.443137, 0.0392157, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+
 [sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 11 )
 region_rect = Rect2( 1048, 329, 443, 116 )
@@ -124,12 +132,10 @@ margin_right = 40.2805
 margin_top = 36.744
 margin_bottom = 28.3931
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=13]
 size = 32
-outline_size = 3
-outline_color = Color( 0.121569, 0.443137, 0.0392157, 1 )
-use_mipmaps = true
-use_filter = true
+outline_size = 4
+outline_color = Color( 0.496094, 0.100368, 0.0891418, 1 )
 font_data = ExtResource( 9 )
 
 [sub_resource type="StyleBoxTexture" id=12]
@@ -139,12 +145,6 @@ margin_left = 47.1989
 margin_right = 51.9634
 margin_top = 27.0102
 margin_bottom = 31.9212
-
-[sub_resource type="DynamicFont" id=13]
-size = 32
-outline_size = 4
-outline_color = Color( 0.496094, 0.100368, 0.0891418, 1 )
-font_data = ExtResource( 9 )
 
 [sub_resource type="StyleBoxTexture" id=14]
 texture = ExtResource( 10 )
@@ -413,17 +413,17 @@ alignment = 1
 margin_left = 280.0
 margin_right = 581.631
 margin_bottom = 104.137
-custom_styles/normal = SubResource( 10 )
 custom_fonts/font = SubResource( 11 )
+custom_styles/normal = SubResource( 10 )
 text = "MOVERSE"
 
 [node name="Limpiar" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/PanelContainer2/HBoxContainer"]
 margin_left = 609.0
 margin_right = 733.162
 margin_bottom = 104.0
-custom_styles/normal = SubResource( 12 )
-custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/normal = SubResource( 12 )
 text = "x"
 
 [node name="TopCanvas" type="Control" parent="BotomCanvas"]
