@@ -23,18 +23,19 @@ func _init():
 func _ready():
 	EventController.connect("update_timer", self, "_update_all")
 	EventController.connect("_on_movement_state", self,"_update_all")
-	#EventController.connect("check_next_grid_object",self,"return_grid_object")
 	
 	randomize()
 	#print(random_seed)
 	generate_grid()
-	
+
+
 func _update_all(state):
 	if state == false:
 		steps +=1
 		move_grid()
 		add_row()
 		delete_row()
+
 
 func generate_grid(): ## generate a dictionary, gridmap generator 
 	for i in range(row_gridsize):
@@ -70,7 +71,6 @@ func delete_row():
 		var pos = Vector2(i,1-steps)
 		clear_object(pos)
 		main_dir.erase(pos)
-	pass
 
 
 func move_grid():

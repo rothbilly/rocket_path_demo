@@ -59,6 +59,7 @@ func clear_all():
 
 func execute_movements():
 	EventController.emit_signal("_on_movement_state", true)
+	hide_ui(true)
 	for movement in movements:
 		if movement.action == MovementIndicator.ACTION.left:
 			EventController.emit_signal("left_button", false)
@@ -72,7 +73,7 @@ func execute_movements():
 	clear_panel()
 	reset_select()
 	EventController.emit_signal("_on_movement_state", false)
-	
+	hide_ui(false)
 	
 func add_energy(energy):
 	_energy_load +=1
@@ -82,6 +83,7 @@ func _check_upgrade():
 	if _energy_load >= _energy:
 		_energy += 1
 		_energy_load = 0
+		
 	
 #----------------------Input Actions------------------
 func _on_Left_pressed():
@@ -102,7 +104,8 @@ func _on_Right_pressed():
 
 
 func _on_Moverse_pressed():
-	execute_movements()
+	if active_panel > 0 :
+		execute_movements()
 
 	pass # Replace with function body.
 
@@ -111,3 +114,13 @@ func _on_Limpiar_pressed():
 	clear_all()
 	reset_select()
 	pass # Replace with function body.
+	
+#------------------------- UI ---------------------
+
+func hide_ui(state: bool):
+	if state:
+		$ButtonsRect/PanelContainer2/HBoxContainer/Moverse.set_disabled(true)
+		$ButtonsRect.set_modulate(Color(0.6,0.6,0.6,1))
+	else:
+		$ButtonsRect.set_modulate(Color(1,1,1,1))
+		$ButtonsRect/PanelContainer2/HBoxContainer/Moverse.set_disabled(false)

@@ -8,12 +8,13 @@ export(NodePath) onready var points_label = get_node(points_label) as Label
 export(NodePath) onready var tween_node = get_node(tween_node) as Tween
 
 func _ready():
+	get_tree().paused = false
 	EventController.connect("_on_movement_state", self, "_on_movement")
 	EventController.connect("_add_coin",self,"_update_points" )
 	pass
 	
 func _process(delta):
-	time_label.text = str(round(timer_node.time_left)) + " S"
+	time_label.text = str(round(timer_node.time_left))
 
 
 func _on_Timer_timeout():
@@ -23,6 +24,7 @@ func _on_Timer_timeout():
 
 func _on_movement(state: bool):
 		timer_node.set_paused(state)
+			
 
 func _update_points(points):
 	game_point += points

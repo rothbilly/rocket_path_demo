@@ -78,6 +78,7 @@ window/stretch/aspect="keep_width"
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 environment/default_clear_color=Color( 0.121569, 0.0941176, 0.160784, 1 )
 environment/default_environment="res://default_env.tres"

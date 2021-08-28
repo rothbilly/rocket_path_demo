@@ -38,8 +38,16 @@ func _move(direction: Vector2) -> void:
 func _move_back(state):
 	if state == false:
 		player_vector += Vector2(0,1)
+		_check_game_over()
 		player_vector.y = clamp(player_vector.y,-8,0)
 		_execute_move(player_vector)
+		
+
+func _check_game_over():
+		if player_vector.y > 0:
+			EventController.emit_signal("_on_dead")
+			print("estas muerto")
+		return
 	
 	
 func _execute_move(dir: Vector2) -> void:

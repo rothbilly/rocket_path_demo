@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Shaders/Main-Background.tres" type="Material" id=1]
 [ext_resource path="res://Sprites/TITLE.png" type="Texture" id=2]
@@ -16,37 +16,13 @@
 [ext_resource path="res://Themes/Fonts/font-resources/new_dynamicfont.tres" type="DynamicFont" id=14]
 [ext_resource path="res://Sprites/Containers@2.png" type="Texture" id=15]
 
-[sub_resource type="Curve" id=1]
-_data = [ Vector2( 0, 1 ), 0.0, -0.069056, 0, 0, Vector2( 1, 0.0295454 ), -3.39504, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=2]
-width = 1024
-curve = SubResource( 1 )
-
-[sub_resource type="ParticlesMaterial" id=3]
-lifetime_randomness = 0.17
-emission_shape = 1
-emission_sphere_radius = 27.85
-flag_disable_z = true
-gravity = Vector3( 0, 98, 0 )
-initial_velocity = 4.76
-initial_velocity_random = 1.0
-angular_velocity = -98.95
-angular_velocity_random = 0.95
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = 43.68
-radial_accel_random = 0.71
-scale = 1.5
-scale_curve = SubResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 56
 outline_size = 8
 outline_color = Color( 0.576471, 0.419608, 0.262745, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 7 )
 region_rect = Rect2( 1534, 774, 443, 117 )
 margin_left = 18.4161
@@ -54,7 +30,7 @@ margin_right = 33.1489
 margin_top = 27.0102
 margin_bottom = 29.4657
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 7 )
 region_rect = Rect2( 1534, 475, 443, 116 )
 margin_left = 34.0094
@@ -63,49 +39,33 @@ margin_top = 25.8471
 margin_bottom = 14.9641
 modulate_color = Color( 0.705882, 0.705882, 0.705882, 1 )
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 7 )
 region_rect = Rect2( 1534, 329, 443, 116 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=5]
 size = 56
 outline_size = 8
 outline_color = Color( 0.368627, 0.211765, 0.211765, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 7 )
 region_rect = Rect2( 1144, 1406, 117, 116 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 796, 278, 84, 84 )
 margin = Rect2( 6, 6, 12, 12 )
 
-[sub_resource type="CanvasItemMaterial" id=11]
+[sub_resource type="CanvasItemMaterial" id=8]
 blend_mode = 1
 
-[sub_resource type="Curve" id=12]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -3.05227, 0.0, 0, 0 ]
+[sub_resource type="Curve" id=9]
+_data = [ Vector2( 0.0368272, 0.963636 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0090909 ), -3.27737, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=13]
-width = 1024
-curve = SubResource( 12 )
-
-[sub_resource type="ParticlesMaterial" id=14]
-emission_shape = 2
-emission_box_extents = Vector3( 320, 120, 1 )
-flag_disable_z = true
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = 33.44
-angle = 93.2
-angle_random = 0.75
-scale_curve = SubResource( 13 )
-
-[sub_resource type="StyleBoxTexture" id=15]
+[sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 15 )
 region_rect = Rect2( 372, 951, 253, 253 )
 margin_left = 36.7554
@@ -113,17 +73,17 @@ margin_right = 34.688
 margin_top = 32.6585
 margin_bottom = 34.0494
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=11]
 size = 56
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=12]
 size = 56
 outline_size = 7
 outline_color = Color( 0.945098, 0.580392, 0.337255, 1 )
 font_data = ExtResource( 12 )
 
-[sub_resource type="Shader" id=18]
+[sub_resource type="Shader" id=13]
 code = "shader_type canvas_item;
 uniform float ScalarUniform;
 uniform sampler2D MainTexture;
@@ -157,8 +117,8 @@ void light() {
 
 }"
 
-[sub_resource type="ShaderMaterial" id=19]
-shader = SubResource( 18 )
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 13 )
 shader_param/ScalarUniform = null
 
 [node name="MainMenu" type="Control"]
@@ -185,10 +145,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Particles2D2" type="Particles2D" parent="."]
+[node name="Particles2D2" type="CPUParticles2D" parent="."]
 position = Vector2( 243.121, 723.193 )
 amount = 6
-process_material = SubResource( 3 )
 texture = ExtResource( 10 )
 
 [node name="Panel" type="Panel" parent="."]
@@ -214,7 +173,7 @@ margin_right = 426.5
 margin_bottom = 286.0
 size_flags_vertical = 0
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "JUGAR"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -229,7 +188,7 @@ margin_right = 426.5
 margin_bottom = 471.49
 size_flags_vertical = 0
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "DESBLOQUEABLES"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -244,10 +203,10 @@ margin_right = 239.5
 margin_bottom = 646.817
 size_flags_vertical = 0
 theme = ExtResource( 3 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "SALIR"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -262,10 +221,10 @@ margin_right = -23.899
 margin_bottom = 198.373
 grow_horizontal = 0
 grow_vertical = 0
-custom_styles/hover = SubResource( 9 )
-custom_styles/normal = SubResource( 9 )
-custom_fonts/font = SubResource( 4 )
-icon = SubResource( 10 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
+icon = SubResource( 7 )
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -285,11 +244,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Particles2D" type="Particles2D" parent="TextureRect"]
-material = SubResource( 11 )
+[node name="Particles2D" type="CPUParticles2D" parent="TextureRect"]
+material = SubResource( 8 )
 position = Vector2( 527.722, 212.461 )
-process_material = SubResource( 14 )
 texture = ExtResource( 5 )
+emission_shape = 2
+emission_rect_extents = Vector2( 360, 120 )
+gravity = Vector2( 0, 0 )
+scale_amount_random = 0.4
+scale_amount_curve = SubResource( 9 )
 
 [node name="Welcome label" type="PanelContainer" parent="."]
 anchor_left = 0.5
@@ -301,7 +264,7 @@ margin_top = -1047.0
 margin_right = 394.0
 margin_bottom = -899.0
 size_flags_horizontal = 3
-custom_styles/panel = SubResource( 15 )
+custom_styles/panel = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -321,7 +284,6 @@ __meta__ = {
 }
 
 [node name="Namesetup" type="ColorRect" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.717647 )
@@ -346,14 +308,14 @@ __meta__ = {
 [node name="LineEdit" type="LineEdit" parent="Namesetup/Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -421.0
+margin_left = -418.33
 margin_top = 32.0362
-margin_right = 421.0
+margin_right = 423.67
 margin_bottom = 165.036
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 16 )
-text = "AVATAR"
+custom_fonts/font = SubResource( 11 )
 max_length = 12
+placeholder_text = "AVATAR"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -365,7 +327,7 @@ margin_left = -221.52
 margin_top = 187.502
 margin_right = 216.48
 margin_bottom = 342.502
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 12 )
 text = "ENVIAR"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -373,13 +335,14 @@ __meta__ = {
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 19 )
+material = SubResource( 14 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="button_down" from="Panel/Play" to="." method="_on_Play_button_down"]
 [connection signal="button_down" from="Panel/Exit" to="." method="_on_Exit_button_down"]
 [connection signal="text_entered" from="Namesetup/Panel/LineEdit" to="." method="_enter_nickname"]
