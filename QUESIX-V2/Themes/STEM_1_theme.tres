@@ -1,18 +1,18 @@
 [gd_resource type="Theme" load_steps=19 format=2]
 
-[ext_resource path="res://Themes/Fonts/conthrax-sb.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Themes/Fonts/conthrax-sb.ttf" type="FontFile" id=1]
 [ext_resource path="res://Themes/Styles/container_styleboxtexture.tres" type="StyleBox" id=2]
-[ext_resource path="res://Sprites/Containers@2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Containers@2.png" type="Texture2D" id=3]
 [ext_resource path="res://Themes/Styles/buttons_styleboxtexture.tres" type="StyleBox" id=4]
 [ext_resource path="res://Themes/Styles/danger_styleboxtexture.tres" type="StyleBox" id=5]
-[ext_resource path="res://Themes/Fonts/font-resources/new_dynamicfont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Themes/Fonts/font-resources/new_dynamicfont.tres" type="FontFile" id=6]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 size = 36
 use_mipmaps = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="StreamTexture" id=2]
+[sub_resource type="CompressedTexture2D" id=2]
 flags = 4
 load_path = "res://.import/Buttons@2.png-30b5099f9f5bcab390d9302382022bef.stex"
 
@@ -24,7 +24,7 @@ margin_right = 32.723
 margin_top = 32.2353
 margin_bottom = 43.7055
 
-[sub_resource type="StreamTexture" id=4]
+[sub_resource type="CompressedTexture2D" id=4]
 flags = 4
 load_path = "res://.import/Buttons@2.png-30b5099f9f5bcab390d9302382022bef.stex"
 
@@ -36,7 +36,7 @@ margin_right = 29.797
 margin_top = 29.797
 margin_bottom = 34.4396
 
-[sub_resource type="StreamTexture" id=6]
+[sub_resource type="CompressedTexture2D" id=6]
 flags = 4
 load_path = "res://.import/Buttons@2.png-30b5099f9f5bcab390d9302382022bef.stex"
 
@@ -48,7 +48,7 @@ margin_right = 32.723
 margin_top = 32.2353
 margin_bottom = 43.7055
 
-[sub_resource type="StreamTexture" id=8]
+[sub_resource type="CompressedTexture2D" id=8]
 flags = 4
 
 [sub_resource type="StyleBoxTexture" id=9]
@@ -75,7 +75,7 @@ margin_right = 71.5986
 margin_top = 68.7347
 margin_bottom = 58.7109
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="FontFile" id=12]
 font_data = ExtResource( 1 )
 
 [resource]

@@ -1,28 +1,28 @@
 [gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://Themes/Fonts/conthrax-sb.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Themes/Fonts/Conthrax Heavy.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://Themes/Fonts/Conthrax Book.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Themes/Fonts/conthrax-sb.ttf" type="FontFile" id=1]
+[ext_resource path="res://Themes/Fonts/Conthrax Heavy.otf" type="FontFile" id=2]
+[ext_resource path="res://Themes/Fonts/Conthrax Book.otf" type="FontFile" id=3]
 [ext_resource path="res://Script/MainMenu.gd" type="Script" id=4]
 [ext_resource path="res://Themes/STEM_1_theme.tres" type="Theme" id=5]
-[ext_resource path="res://Sprites/white.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Frame 65.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/par-3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/white.png" type="Texture2D" id=6]
+[ext_resource path="res://Sprites/Frame 65.png" type="Texture2D" id=7]
+[ext_resource path="res://Sprites/par-3.png" type="Texture2D" id=8]
 [ext_resource path="res://Shaders/Main-Background.tres" type="Material" id=9]
-[ext_resource path="res://Sprites/Containers@2.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/icons@2.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/TITLE.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Buttons@2.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Containers@2.png" type="Texture2D" id=10]
+[ext_resource path="res://Sprites/icons@2.png" type="Texture2D" id=11]
+[ext_resource path="res://Sprites/TITLE.png" type="Texture2D" id=12]
+[ext_resource path="res://Sprites/Buttons@2.png" type="Texture2D" id=13]
 [ext_resource path="res://Data/testData.tres" type="Resource" id=14]
-[ext_resource path="res://Themes/Fonts/font-resources/new_dynamicfont.tres" type="DynamicFont" id=15]
+[ext_resource path="res://Themes/Fonts/font-resources/new_dynamicfont.tres" type="FontFile" id=15]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 size = 56
 outline_size = 8
 outline_color = Color( 0.576471, 0.419608, 0.262745, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="FontFile" id=5]
 size = 56
 outline_size = 8
 outline_color = Color( 0.368627, 0.211765, 0.211765, 1 )
@@ -31,18 +31,18 @@ font_data = ExtResource( 1 )
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 13 )
 region_rect = Rect2( 1534, 774, 443, 117 )
-margin_left = 18.4161
-margin_right = 33.1489
-margin_top = 27.0102
-margin_bottom = 29.4657
+offset_left = 18.4161
+offset_right = 33.1489
+offset_top = 27.0102
+offset_bottom = 29.4657
 
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 13 )
 region_rect = Rect2( 1534, 475, 443, 116 )
-margin_left = 34.0094
-margin_right = 34.0094
-margin_top = 25.8471
-margin_bottom = 14.9641
+offset_left = 34.0094
+offset_right = 34.0094
+offset_top = 25.8471
+offset_bottom = 14.9641
 modulate_color = Color( 0.705882, 0.705882, 0.705882, 1 )
 
 [sub_resource type="StyleBoxTexture" id=4]
@@ -68,16 +68,16 @@ _data = [ Vector2( 0.0368272, 0.963636 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0090909 
 [sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 10 )
 region_rect = Rect2( 372, 951, 253, 253 )
-margin_left = 36.7554
-margin_right = 34.688
-margin_top = 32.6585
-margin_bottom = 34.0494
+offset_left = 36.7554
+offset_right = 34.688
+offset_top = 32.6585
+offset_bottom = 34.0494
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="FontFile" id=11]
 size = 56
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="FontFile" id=12]
 size = 56
 outline_size = 7
 outline_color = Color( 0.945098, 0.580392, 0.337255, 1 )
@@ -137,8 +137,8 @@ material = ExtResource( 9 )
 anchor_left = -0.00218731
 anchor_right = 0.997813
 anchor_bottom = 1.0
-margin_left = 2.51978
-margin_right = 2.51978
+offset_left = 2.51978
+offset_right = 2.51978
 texture = ExtResource( 6 )
 stretch_mode = 2
 __meta__ = {
@@ -155,10 +155,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -498.0
-margin_top = -851.0
-margin_right = 499.0
-margin_bottom = -121.0
+offset_left = -498.0
+offset_top = -851.0
+offset_right = 499.0
+offset_bottom = -121.0
 theme = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -167,13 +167,13 @@ __meta__ = {
 [node name="Play" type="Button" parent="Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -426.5
-margin_top = 56.0
-margin_right = 426.5
-margin_bottom = 286.0
+offset_left = -426.5
+offset_top = 56.0
+offset_right = 426.5
+offset_bottom = 286.0
 size_flags_vertical = 0
 theme = ExtResource( 5 )
-custom_fonts/font = SubResource( 1 )
+theme_override_fonts/font = SubResource( 1 )
 text = "JUGAR"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -182,13 +182,13 @@ __meta__ = {
 [node name="Button2" type="Button" parent="Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -426.5
-margin_top = 320.49
-margin_right = 426.5
-margin_bottom = 471.49
+offset_left = -426.5
+offset_top = 320.49
+offset_right = 426.5
+offset_bottom = 471.49
 size_flags_vertical = 0
 theme = ExtResource( 5 )
-custom_fonts/font = SubResource( 1 )
+theme_override_fonts/font = SubResource( 1 )
 text = "DESBLOQUEABLES"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -197,16 +197,16 @@ __meta__ = {
 [node name="Exit" type="Button" parent="Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -239.5
-margin_top = 495.817
-margin_right = 239.5
-margin_bottom = 646.817
+offset_left = -239.5
+offset_top = 495.817
+offset_right = 239.5
+offset_bottom = 646.817
 size_flags_vertical = 0
 theme = ExtResource( 5 )
-custom_fonts/font = SubResource( 5 )
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+theme_override_fonts/font = SubResource( 5 )
+theme_override_styles/hover = SubResource( 2 )
+theme_override_styles/pressed = SubResource( 3 )
+theme_override_styles/normal = SubResource( 4 )
 text = "SALIR"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -215,15 +215,15 @@ __meta__ = {
 [node name="Options" type="Button" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -183.899
-margin_top = 38.373
-margin_right = -23.899
-margin_bottom = 198.373
+offset_left = -183.899
+offset_top = 38.373
+offset_right = -23.899
+offset_bottom = 198.373
 grow_horizontal = 0
 grow_vertical = 0
-custom_fonts/font = SubResource( 1 )
-custom_styles/hover = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+theme_override_fonts/font = SubResource( 1 )
+theme_override_styles/hover = SubResource( 6 )
+theme_override_styles/normal = SubResource( 6 )
 icon = SubResource( 7 )
 expand_icon = true
 __meta__ = {
@@ -232,11 +232,11 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
-margin_left = 126.163
-margin_top = 332.96
-margin_right = -105.837
-margin_bottom = 812.96
-rect_min_size = Vector2( 920, 480 )
+offset_left = 126.163
+offset_top = 332.96
+offset_right = -105.837
+offset_bottom = 812.96
+custom_minimum_size = Vector2( 920, 480 )
 texture = ExtResource( 12 )
 expand = true
 stretch_mode = 3
@@ -244,7 +244,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Particles2D" type="CPUParticles2D" parent="TextureRect"]
+[node name="GPUParticles2D" type="CPUParticles2D" parent="TextureRect"]
 material = SubResource( 8 )
 position = Vector2( 527.722, 212.461 )
 texture = ExtResource( 7 )
@@ -259,22 +259,22 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -351.0
-margin_top = -1047.0
-margin_right = 394.0
-margin_bottom = -899.0
+offset_left = -351.0
+offset_top = -1047.0
+offset_right = 394.0
+offset_bottom = -899.0
 size_flags_horizontal = 3
-custom_styles/panel = SubResource( 10 )
+theme_override_styles/panel = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Playerlabel" type="Label" parent="Welcome label"]
-margin_left = 36.7554
-margin_top = 53.6585
-margin_right = 710.312
-margin_bottom = 92.6585
-custom_fonts/font = ExtResource( 15 )
+offset_left = 36.7554
+offset_top = 53.6585
+offset_right = 710.312
+offset_bottom = 92.6585
+theme_override_fonts/font = ExtResource( 15 )
 text = "Bienvendo de nuevo: "
 align = 1
 valign = 1
@@ -296,10 +296,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -450.0
-margin_top = -211.0
-margin_right = 450.0
-margin_bottom = 173.0
+offset_left = -450.0
+offset_top = -211.0
+offset_right = 450.0
+offset_bottom = 173.0
 theme = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -308,12 +308,12 @@ __meta__ = {
 [node name="LineEdit" type="LineEdit" parent="Namesetup/Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -418.33
-margin_top = 32.0362
-margin_right = 423.67
-margin_bottom = 165.036
+offset_left = -418.33
+offset_top = 32.0362
+offset_right = 423.67
+offset_bottom = 165.036
 theme = ExtResource( 5 )
-custom_fonts/font = SubResource( 11 )
+theme_override_fonts/font = SubResource( 11 )
 max_length = 12
 placeholder_text = "AVATAR"
 __meta__ = {
@@ -323,11 +323,11 @@ __meta__ = {
 [node name="Button" type="Button" parent="Namesetup/Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -221.52
-margin_top = 187.502
-margin_right = 216.48
-margin_bottom = 342.502
-custom_fonts/font = SubResource( 12 )
+offset_left = -221.52
+offset_top = 187.502
+offset_right = 216.48
+offset_bottom = 342.502
+theme_override_fonts/font = SubResource( 12 )
 text = "ENVIAR"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -345,5 +345,5 @@ __meta__ = {
 
 [connection signal="button_down" from="Panel/Play" to="." method="_on_Play_button_down"]
 [connection signal="button_down" from="Panel/Exit" to="." method="_on_Exit_button_down"]
-[connection signal="text_entered" from="Namesetup/Panel/LineEdit" to="." method="_enter_nickname"]
+[connection signal="text_submitted" from="Namesetup/Panel/LineEdit" to="." method="_enter_nickname"]
 [connection signal="pressed" from="Namesetup/Panel/Button" to="." method="_enter_nickname"]

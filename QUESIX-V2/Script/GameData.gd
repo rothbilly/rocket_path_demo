@@ -1,9 +1,9 @@
 extends Resource
 class_name GameData
 
-export(String) var player_nick_name
+@export var player_nick_name: String
 
-export(int) var game_coins
+@export var game_coins: int
 var run_playeds: int
 
 

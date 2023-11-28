@@ -2,23 +2,23 @@ extends Node2D
 
 class_name Player
 
-export(float, 0.1, 1) var tween_time
+@export var tween_time # (float, 0.1, 1)
 
 var tile_distance: int = 128
 var player_vector := Vector2(3,0)
 var next_player_pos : Vector2
 var can_move: bool
 
-onready var tween_node = get_node("Tween") as Tween
-onready var front_ray = get_node("RayCast2D") as RayCast2D
+@onready var tween_node = get_node("Tween") as Tween
+@onready var front_ray = get_node("RayCast2D") as RayCast2D
 
 
 func _ready():
-	EventController.connect("front_button", self, "_move")
-	EventController.connect("left_button", self, "_rotate")
-	EventController.connect("right_button", self, "_rotate")
-	EventController.connect("update_timer",self, "_move_back")
-	EventController.connect("_on_movement_state", self,"_move_back")
+	EventController.connect("front_button", Callable(self, "_move"))
+	EventController.connect("left_button", Callable(self, "_rotate"))
+	EventController.connect("right_button", Callable(self, "_rotate"))
+	EventController.connect("update_timer", Callable(self, "_move_back"))
+	EventController.connect("_on_movement_state", Callable(self, "_move_back"))
 	
 	position = player_vector*tile_distance
 	next_player_pos = position
