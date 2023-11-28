@@ -1,22 +1,22 @@
 [gd_scene load_steps=36 format=2]
 
-[ext_resource path="res://Sprites/blue-tile (2).png" type="Texture" id=1]
-[ext_resource path="res://Sprites/blue-tile (3).png" type="Texture" id=2]
-[ext_resource path="res://Sprites/blue-tile (5).png" type="Texture" id=3]
-[ext_resource path="res://Sprites/blue-tile (4).png" type="Texture" id=4]
+[ext_resource path="res://Sprites/blue-tile (2).png" type="Texture2D" id=1]
+[ext_resource path="res://Sprites/blue-tile (3).png" type="Texture2D" id=2]
+[ext_resource path="res://Sprites/blue-tile (5).png" type="Texture2D" id=3]
+[ext_resource path="res://Sprites/blue-tile (4).png" type="Texture2D" id=4]
 [ext_resource path="res://Themes/STEM_1_theme.tres" type="Theme" id=5]
 [ext_resource path="res://Script/GridCreator.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Script/LowerUI.gd" type="Script" id=8]
-[ext_resource path="res://Themes/Fonts/conthrax-sb.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://Sprites/Containers@2.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Buttons@2.png" type="Texture" id=11]
+[ext_resource path="res://Themes/Fonts/conthrax-sb.ttf" type="FontFile" id=9]
+[ext_resource path="res://Sprites/Containers@2.png" type="Texture2D" id=10]
+[ext_resource path="res://Sprites/Buttons@2.png" type="Texture2D" id=11]
 [ext_resource path="res://Script/LevelManager.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/ProgramingPanel.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Sprites/stars.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/stars.png" type="Texture2D" id=14]
 [ext_resource path="res://Shaders/Stars.tres" type="Material" id=15]
 [ext_resource path="res://Scenes/AlertFrame.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Sprites/item-point.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/item-point.png" type="Texture2D" id=17]
 [ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=18]
 
 [sub_resource type="TileSet" id=1]
@@ -80,10 +80,10 @@
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 10 )
 region_rect = Rect2( 372, 384, 253, 253 )
-margin_left = 34.3767
-margin_right = 27.0102
-margin_top = 29.4657
-margin_bottom = 23.327
+offset_left = 34.3767
+offset_right = 27.0102
+offset_top = 29.4657
+offset_bottom = 23.327
 modulate_color = Color( 1, 1, 1, 0.458824 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
@@ -97,26 +97,26 @@ modulate_color = Color( 1, 1, 1, 0.458824 )
 [sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 10 )
 region_rect = Rect2( 2642, 500, 674, 24 )
-margin_left = 15.3634
-margin_right = 16.347
+offset_left = 15.3634
+offset_right = 16.347
 
 [sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 10 )
 region_rect = Rect2( 726, 1078, 616, 128 )
-margin_left = 33.0
-margin_right = 39.0
-margin_top = 44.0
-margin_bottom = 32.0
+offset_left = 33.0
+offset_right = 39.0
+offset_top = 44.0
+offset_bottom = 32.0
 
 [sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 10 )
 region_rect = Rect2( 726, 1230, 616, 222 )
-margin_left = 31.0249
-margin_right = 35.4571
-margin_top = 40.9972
-margin_bottom = 35.4571
+offset_left = 31.0249
+offset_right = 35.4571
+offset_top = 40.9972
+offset_bottom = 35.4571
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="FontFile" id=11]
 size = 32
 outline_size = 3
 outline_color = Color( 0.121569, 0.443137, 0.0392157, 1 )
@@ -127,12 +127,12 @@ font_data = ExtResource( 9 )
 [sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 11 )
 region_rect = Rect2( 1048, 329, 443, 116 )
-margin_left = 50.3507
-margin_right = 40.2805
-margin_top = 36.744
-margin_bottom = 28.3931
+offset_left = 50.3507
+offset_right = 40.2805
+offset_top = 36.744
+offset_bottom = 28.3931
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="FontFile" id=13]
 size = 32
 outline_size = 4
 outline_color = Color( 0.496094, 0.100368, 0.0891418, 1 )
@@ -141,38 +141,38 @@ font_data = ExtResource( 9 )
 [sub_resource type="StyleBoxTexture" id=12]
 texture = ExtResource( 11 )
 region_rect = Rect2( 1542, 1406, 117, 116 )
-margin_left = 47.1989
-margin_right = 51.9634
-margin_top = 27.0102
-margin_bottom = 31.9212
+offset_left = 47.1989
+offset_right = 51.9634
+offset_top = 27.0102
+offset_bottom = 31.9212
 
 [sub_resource type="StyleBoxTexture" id=14]
 texture = ExtResource( 10 )
 region_rect = Rect2( 78, 668, 252, 252 )
-margin_left = 71.8178
-margin_right = 68.4775
-margin_top = 81.8389
-margin_bottom = 83.5091
+offset_left = 71.8178
+offset_right = 68.4775
+offset_top = 81.8389
+offset_bottom = 83.5091
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="FontFile" id=15]
 size = 64
 font_data = ExtResource( 9 )
 
 [sub_resource type="StyleBoxTexture" id=16]
 texture = ExtResource( 10 )
 region_rect = Rect2( 78, 951, 252, 253 )
-margin_left = 57.6
-margin_right = 52.0
-margin_top = 59.85
-margin_bottom = 61.75
+offset_left = 57.6
+offset_right = 52.0
+offset_top = 59.85
+offset_bottom = 61.75
 
 [sub_resource type="StyleBoxTexture" id=17]
 texture = ExtResource( 11 )
 region_rect = Rect2( 1290, 129, 257, 79 )
-margin_left = 55.2277
-margin_right = 64.3168
-margin_top = 44.0
-margin_bottom = 49.1387
+offset_left = 55.2277
+offset_right = 64.3168
+offset_top = 44.0
+offset_bottom = 49.1387
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 12 )
@@ -190,9 +190,9 @@ self_modulate = Color( 0.498039, 0.498039, 0.498039, 1 )
 material = ExtResource( 15 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -40.0
-margin_right = 24.0
-margin_bottom = 32.0
+offset_left = -40.0
+offset_right = 24.0
+offset_bottom = 32.0
 texture = ExtResource( 14 )
 stretch_mode = 2
 __meta__ = {
@@ -205,9 +205,9 @@ position = Vector2( 0.282, 0 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 128, 128 )
 format = 1
-tile_data = PoolIntArray( 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 655365, 4, 0, 655366, 4, 0, 655367, 4, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0 )
+tile_data = PackedInt32Array( 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 655365, 4, 0, 655366, 4, 0, 655367, 4, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0 )
 
-[node name="Position2D" type="Position2D" parent="."]
+[node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2( 192, 1472 )
 rotation = 0.000970288
 script = ExtResource( 6 )
@@ -216,19 +216,19 @@ __meta__ = {
 }
 my_seed = 320
 
-[node name="Player" parent="Position2D" instance=ExtResource( 7 )]
+[node name="Player" parent="Marker2D" instance=ExtResource( 7 )]
 position = Vector2( 384, 0 )
 tween_time = 0.4
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Position2D/Player"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Marker2D/Player"]
 remote_path = NodePath("../../Alert")
 update_rotation = false
 update_scale = false
 
-[node name="Alert" type="Position2D" parent="Position2D"]
+[node name="Alert" type="Marker2D" parent="Marker2D"]
 position = Vector2( 384, 0 )
 
-[node name="AlertFrame" parent="Position2D/Alert" instance=ExtResource( 16 )]
+[node name="AlertFrame" parent="Marker2D/Alert" instance=ExtResource( 16 )]
 visible = false
 position = Vector2( 0, -200 )
 rotation = -0.000970288
@@ -244,7 +244,7 @@ layer = 2
 [node name="BottomCanvas" type="Control" parent="BotomCanvas"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 1408.0
+offset_top = 1408.0
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -254,12 +254,12 @@ movements = [ NodePath("EnergyContainer/Panel"), NodePath("EnergyContainer/Panel
 [node name="EnergyContainer" type="Panel" parent="BotomCanvas/BottomCanvas"]
 anchor_left = 0.499854
 anchor_right = 0.499854
-margin_left = -615.832
-margin_top = -1248.0
-margin_right = 669.168
-margin_bottom = -1058.0
+offset_left = -615.832
+offset_top = -1248.0
+offset_right = 669.168
+offset_bottom = -1058.0
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 2 )
+theme_override_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -311,11 +311,11 @@ parameters/playback = SubResource( 6 )
 [node name="HScrollBar" type="HScrollBar" parent="BotomCanvas/BottomCanvas/EnergyContainer"]
 anchor_top = -0.0526316
 anchor_bottom = -0.0526316
-margin_left = 90.0
-margin_top = 158.0
-margin_right = 1157.0
-margin_bottom = 182.0
-custom_styles/scroll = SubResource( 7 )
+offset_left = 90.0
+offset_top = 158.0
+offset_right = 1157.0
+offset_bottom = 182.0
+theme_override_styles/scroll = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -324,14 +324,14 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.282
-margin_top = -485.0
-margin_right = 0.281982
-margin_bottom = 3.00165
+offset_left = 0.282
+offset_top = -485.0
+offset_right = 0.281982
+offset_bottom = 3.00165
 grow_vertical = 0
 size_flags_vertical = 3
 theme = ExtResource( 5 )
-custom_styles/panel = SubResource( 8 )
+theme_override_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -339,91 +339,91 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="BotomCanvas/BottomCanvas/ButtonsRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 224.0
-margin_bottom = -0.00134277
-custom_constants/margin_right = 50
-custom_constants/margin_top = 30
-custom_constants/margin_left = 50
-custom_constants/margin_bottom = 30
+offset_top = 224.0
+offset_bottom = -0.00134277
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 30
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/BottomCanvas/ButtonsRect/MarginContainer"]
-margin_left = 50.0
-margin_top = 30.0
-margin_right = 1102.0
-margin_bottom = 234.0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 1102.0
+offset_bottom = 234.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 360, 0 )
-custom_constants/separation = 25
+custom_minimum_size = Vector2( 360, 0 )
+theme_override_constants/separation = 25
 alignment = 1
 
 [node name="Left" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/MarginContainer/HBoxContainer"]
-margin_left = 194.0
-margin_right = 394.0
-margin_bottom = 204.0
-rect_min_size = Vector2( 200, 0 )
+offset_left = 194.0
+offset_right = 394.0
+offset_bottom = 204.0
+custom_minimum_size = Vector2( 200, 0 )
 size_flags_vertical = 5
 text = "LEFT"
 
 [node name="Move" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/MarginContainer/HBoxContainer"]
-margin_left = 419.0
-margin_right = 628.362
-margin_bottom = 204.0
+offset_left = 419.0
+offset_right = 628.362
+offset_bottom = 204.0
 grow_vertical = 0
-rect_min_size = Vector2( 200, 0 )
+custom_minimum_size = Vector2( 200, 0 )
 size_flags_vertical = 3
 text = "MOVE"
 
 [node name="Right" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/MarginContainer/HBoxContainer"]
-margin_left = 653.0
-margin_right = 858.362
-margin_bottom = 204.0
-rect_min_size = Vector2( 200, 0 )
+offset_left = 653.0
+offset_right = 858.362
+offset_bottom = 204.0
+custom_minimum_size = Vector2( 200, 0 )
 size_flags_vertical = 5
 text = "RIGTH"
 
 [node name="PanelContainer2" type="PanelContainer" parent="BotomCanvas/BottomCanvas/ButtonsRect"]
 self_modulate = Color( 0.545098, 0.545098, 0.545098, 1 )
 anchor_right = 1.0
-margin_left = 33.0
-margin_top = 44.0
-margin_right = -39.0
-margin_bottom = 224.454
+offset_left = 33.0
+offset_top = 44.0
+offset_right = -39.0
+offset_bottom = 224.454
 grow_vertical = 0
-custom_styles/panel = SubResource( 9 )
+theme_override_styles/panel = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BotomCanvas/BottomCanvas/ButtonsRect/PanelContainer2"]
-margin_left = 31.0249
-margin_top = 40.9972
-margin_right = 1044.54
-margin_bottom = 144.997
+offset_left = 31.0249
+offset_top = 40.9972
+offset_right = 1044.54
+offset_bottom = 144.997
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 28
+theme_override_constants/separation = 28
 alignment = 1
 
 [node name="Moverse" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/PanelContainer2/HBoxContainer"]
-margin_left = 280.0
-margin_right = 581.631
-margin_bottom = 104.137
-custom_fonts/font = SubResource( 11 )
-custom_styles/normal = SubResource( 10 )
+offset_left = 280.0
+offset_right = 581.631
+offset_bottom = 104.137
+theme_override_fonts/font = SubResource( 11 )
+theme_override_styles/normal = SubResource( 10 )
 text = "MOVERSE"
 
 [node name="Limpiar" type="Button" parent="BotomCanvas/BottomCanvas/ButtonsRect/PanelContainer2/HBoxContainer"]
-margin_left = 609.0
-margin_right = 733.162
-margin_bottom = 104.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 13 )
-custom_styles/normal = SubResource( 12 )
+offset_left = 609.0
+offset_right = 733.162
+offset_bottom = 104.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 13 )
+theme_override_styles/normal = SubResource( 12 )
 text = "x"
 
 [node name="TopCanvas" type="Control" parent="BotomCanvas"]
@@ -434,15 +434,15 @@ __meta__ = {
 
 [node name="Time Panel" type="Panel" parent="BotomCanvas/TopCanvas"]
 anchor_right = 1.0
-margin_left = 709.482
-margin_top = 24.0
-margin_right = -186.518
-margin_bottom = 140.0
+offset_left = 709.482
+offset_top = 24.0
+offset_right = -186.518
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
-custom_styles/panel = SubResource( 14 )
+theme_override_styles/panel = SubResource( 14 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -453,13 +453,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -23.0
-margin_top = -100.0
-margin_right = 116.0
-margin_bottom = -13.0
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 116.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 15 )
+theme_override_fonts/font = SubResource( 15 )
 text = "20"
 valign = 1
 __meta__ = {
@@ -467,15 +467,15 @@ __meta__ = {
 }
 
 [node name="Points2" type="Panel" parent="BotomCanvas/TopCanvas"]
-margin_left = 25.832
-margin_top = 24.0
-margin_right = 377.832
-margin_bottom = 136.0
+offset_left = 25.832
+offset_top = 24.0
+offset_right = 377.832
+offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
-custom_styles/panel = SubResource( 16 )
+theme_override_styles/panel = SubResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -483,10 +483,10 @@ __meta__ = {
 [node name="Label" type="Label" parent="BotomCanvas/TopCanvas/Points2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -93.0
+offset_right = -93.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 15 )
+theme_override_fonts/font = SubResource( 15 )
 text = "0"
 align = 2
 valign = 1
@@ -495,7 +495,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="BotomCanvas/TopCanvas/Points2"]
+[node name="Sprite2D" type="Sprite2D" parent="BotomCanvas/TopCanvas/Points2"]
 position = Vector2( 302.968, 56.3514 )
 scale = Vector2( 0.54281, 0.54281 )
 texture = ExtResource( 17 )
@@ -505,15 +505,15 @@ texture = ExtResource( 17 )
 [node name="PauseButton" type="Button" parent="BotomCanvas/TopCanvas"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 406.175
-margin_top = 24.0
-margin_right = 533.175
-margin_bottom = 140.0
+offset_left = 406.175
+offset_top = 24.0
+offset_right = 533.175
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
-custom_styles/normal = SubResource( 17 )
+theme_override_styles/normal = SubResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

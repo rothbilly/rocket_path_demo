@@ -1,111 +1,89 @@
-[gd_resource type="Theme" load_steps=19 format=2]
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://c8c0gak13ed58"]
 
-[ext_resource path="res://Themes/Fonts/conthrax-sb.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Themes/Styles/container_styleboxtexture.tres" type="StyleBox" id=2]
-[ext_resource path="res://Sprites/Containers@2.png" type="Texture" id=3]
-[ext_resource path="res://Themes/Styles/buttons_styleboxtexture.tres" type="StyleBox" id=4]
-[ext_resource path="res://Themes/Styles/danger_styleboxtexture.tres" type="StyleBox" id=5]
-[ext_resource path="res://Themes/Fonts/font-resources/new_dynamicfont.tres" type="DynamicFont" id=6]
+[ext_resource type="FontFile" uid="uid://dn0y31w3df2ct" path="res://Themes/Fonts/conthrax-sb.ttf" id="1"]
+[ext_resource type="StyleBox" path="res://Themes/Styles/container_styleboxtexture.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://c2kgb41vkpxxo" path="res://Sprites/Containers@2.png" id="3"]
+[ext_resource type="StyleBox" path="res://Themes/Styles/buttons_styleboxtexture.tres" id="4"]
+[ext_resource type="StyleBox" path="res://Themes/Styles/danger_styleboxtexture.tres" id="5"]
+[ext_resource type="FontFile" path="res://Themes/Fonts/font-resources/new_dynamicfont.tres" id="6"]
 
-[sub_resource type="DynamicFont" id=1]
-size = 36
-use_mipmaps = true
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="StreamTexture" id=2]
-flags = 4
-load_path = "res://.import/Buttons@2.png-30b5099f9f5bcab390d9302382022bef.stex"
+[sub_resource type="CompressedTexture2D" id="2"]
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = SubResource( 2 )
-region_rect = Rect2( 564, 931, 442, 117 )
-margin_left = 32.6385
-margin_right = 32.723
-margin_top = 32.2353
-margin_bottom = 43.7055
+[sub_resource type="StyleBoxTexture" id="3"]
+texture = SubResource("2")
+region_rect = Rect2(564, 931, 442, 117)
 
-[sub_resource type="StreamTexture" id=4]
-flags = 4
-load_path = "res://.import/Buttons@2.png-30b5099f9f5bcab390d9302382022bef.stex"
+[sub_resource type="CompressedTexture2D" id="4"]
 
-[sub_resource type="StyleBoxTexture" id=5]
-texture = SubResource( 4 )
-region_rect = Rect2( 73, 611, 454, 128 )
-margin_left = 28.2494
-margin_right = 29.797
-margin_top = 29.797
-margin_bottom = 34.4396
+[sub_resource type="StyleBoxTexture" id="5"]
+texture = SubResource("4")
+region_rect = Rect2(73, 611, 454, 128)
 
-[sub_resource type="StreamTexture" id=6]
-flags = 4
-load_path = "res://.import/Buttons@2.png-30b5099f9f5bcab390d9302382022bef.stex"
+[sub_resource type="CompressedTexture2D" id="6"]
 
-[sub_resource type="StyleBoxTexture" id=7]
-texture = SubResource( 6 )
-region_rect = Rect2( 78, 774, 443, 117 )
-margin_left = 32.6385
-margin_right = 32.723
-margin_top = 32.2353
-margin_bottom = 43.7055
+[sub_resource type="StyleBoxTexture" id="7"]
+texture = SubResource("6")
+region_rect = Rect2(78, 774, 443, 117)
 
-[sub_resource type="StreamTexture" id=8]
-flags = 4
-load_path = "res://.import/Buttons@2.png-4a82af6cc04caecbecd31be986a9172f.stex"
+[sub_resource type="CompressedTexture2D" id="8"]
 
-[sub_resource type="StyleBoxTexture" id=9]
-texture = SubResource( 8 )
-region_rect = Rect2( 78, 475, 443, 112 )
-margin_left = 28.2494
-margin_right = 29.797
-margin_top = 29.797
-margin_bottom = 34.4396
+[sub_resource type="StyleBoxTexture" id="9"]
+texture = SubResource("8")
+region_rect = Rect2(78, 475, 443, 112)
 
-[sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 3 )
-region_rect = Rect2( 728, 722, 614, 80 )
-margin_left = 32.5802
-margin_right = 31.7229
-margin_top = 29.1507
-margin_bottom = 23.1491
+[sub_resource type="StyleBoxTexture" id="10"]
+texture = ExtResource("3")
+region_rect = Rect2(728, 722, 614, 80)
 
-[sub_resource type="StyleBoxTexture" id=11]
-texture = ExtResource( 3 )
-region_rect = Rect2( 372, 668, 253, 252 )
-margin_left = 55.8469
-margin_right = 71.5986
-margin_top = 68.7347
-margin_bottom = 58.7109
+[sub_resource type="StyleBoxTexture" id="11"]
+texture = ExtResource("3")
+region_rect = Rect2(372, 668, 253, 252)
 
-[sub_resource type="DynamicFont" id=12]
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="12"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [resource]
-default_font = SubResource( 12 )
-Button/colors/font_color = Color( 1, 1, 1, 1 )
-Button/colors/font_color_disabled = Color( 0.901961, 0.901961, 0.901961, 0.2 )
-Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+default_font = SubResource("12")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_color_disabled = Color(0.901961, 0.901961, 0.901961, 0.2)
+Button/colors/font_color_hover = Color(0.941176, 0.941176, 0.941176, 1)
+Button/colors/font_color_pressed = Color(1, 1, 1, 1)
 Button/constants/hseparation = 2
-Button/fonts/font = SubResource( 1 )
-Button/styles/Active = ExtResource( 4 )
-Button/styles/Danger = ExtResource( 5 )
-Button/styles/disabled = SubResource( 3 )
-Button/styles/focus = SubResource( 5 )
-Button/styles/hover = SubResource( 7 )
-Button/styles/normal = ExtResource( 4 )
-Button/styles/pressed = SubResource( 9 )
-LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
-LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
-LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
-LineEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
-LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
-LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
-LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+Button/fonts/font = SubResource("1")
+Button/styles/Active = ExtResource("4")
+Button/styles/Danger = ExtResource("5")
+Button/styles/disabled = SubResource("3")
+Button/styles/focus = SubResource("5")
+Button/styles/hover = SubResource("7")
+Button/styles/normal = ExtResource("4")
+Button/styles/pressed = SubResource("9")
+LineEdit/colors/clear_button_color = Color(0.88, 0.88, 0.88, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/colors/cursor_color = Color(0.94, 0.94, 0.94, 1)
+LineEdit/colors/font_color = Color(0.88, 0.88, 0.88, 1)
+LineEdit/colors/font_color_selected = Color(0, 0, 0, 1)
+LineEdit/colors/font_color_uneditable = Color(0.88, 0.88, 0.88, 0.5)
+LineEdit/colors/selection_color = Color(0.49, 0.49, 0.49, 1)
 LineEdit/constants/minimum_spaces = 12
-LineEdit/fonts/font = ExtResource( 6 )
+LineEdit/fonts/font = ExtResource("6")
 LineEdit/icons/clear = null
 LineEdit/styles/focus = null
-LineEdit/styles/normal = SubResource( 10 )
+LineEdit/styles/normal = SubResource("10")
 LineEdit/styles/read_only = null
-Panel/styles/panel = ExtResource( 2 )
-PanelContainer/styles/panel = SubResource( 11 )
+Panel/styles/panel = ExtResource("2")
+PanelContainer/styles/panel = SubResource("11")

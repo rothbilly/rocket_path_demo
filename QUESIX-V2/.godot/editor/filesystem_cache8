@@ -1,0 +1,92 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1701211659
+default_env.tres::Environment::-1::1701209665::0::1::::<><>::
+::res://Builds/::1701209628
+::res://Builds/Web/::1701209628
+index.png::CompressedTexture2D::3401483602552048651::1701209628::1701211660::1::::<><>::
+::res://Data/::1701209628
+testData.tres::Resource::-1::1701209666::0::1::::<><>::res://Script/GameData.gd
+::res://GUI Elements/::1701209628
+HScrollBar_STEM.tscn::PackedScene::-1::1701209666::0::1::::<><>::
+::res://Scenes/::1701209628
+AlertFrame.tscn::PackedScene::-1::1701209666::0::1::::<><>::res://Sprites/dialog_frame.png<>res://Sprites/simbols-sprites.png<>res://Script/AlertFrame.gd
+Coin.tscn::PackedScene::-1::1701209666::0::1::::<><>::res://Script/Coin.gd<>res://Sprites/point.png
+GameOver.tscn::PackedScene::-1::1701209666::0::1::::<><>::res://Sprites/GAME OVER.png<>res://Sprites/Containers@2.png<>res://Themes/Fonts/conthrax-sb.ttf<>res://Script/GameOver.gd
+Meteoro.tscn::PackedScene::-1::1701209666::0::1::::<><>::res://Sprites/meteoro.png<>res://Script/Meteoro.gd
+OptionsMenu.tscn::PackedScene::-1::1701209666::0::1::::<><>::res://Themes/STEM_1_theme.tres<>res://Sprites/Containers@2.png<>res://Sprites/icons@2.png<>res://Themes/Fonts/font-resources/conthrax-120.tres<>res://Script/OptionsMenu.gd
+Player.tscn::PackedScene::-1::1701209666::0::1::::<><>::res://Sprites/cohete2.png<>res://Script/Player.gd
+ProgramingPanel.tscn::PackedScene::-1::1701209666::0::1::::<><>::res://Sprites/directions.png<>res://Script/MovementIndicator.gd<>res://Sprites/frames.png
+UserUI.tscn::PackedScene::-1::1701209666::0::1::::<><>::res://Themes/STEM_1_theme.tres
+::res://Scenes/Levels/::1701209628
+Level.tscn::PackedScene::-1::1701209666::0::1::::<><>::res://Sprites/blue-tile (2).png<>res://Sprites/blue-tile (3).png<>res://Sprites/blue-tile (5).png<>res://Sprites/blue-tile (4).png<>res://Themes/STEM_1_theme.tres<>res://Script/GridCreator.gd<>res://Scenes/Player.tscn<>res://Script/LowerUI.gd<>res://Themes/Fonts/conthrax-sb.ttf<>res://Sprites/Containers@2.png<>res://Sprites/Buttons@2.png<>res://Script/LevelManager.gd<>res://Scenes/ProgramingPanel.tscn<>res://Sprites/stars.png<>res://Shaders/Stars.tres<>res://Scenes/AlertFrame.tscn<>res://Sprites/item-point.png<>res://Scenes/GameOver.tscn
+Main.tscn::PackedScene::-1::1701209666::0::1::::<><>::res://Themes/Fonts/conthrax-sb.ttf<>res://Themes/Fonts/Conthrax Heavy.otf<>res://Themes/Fonts/Conthrax Book.otf<>res://Script/MainMenu.gd<>res://Themes/STEM_1_theme.tres<>res://Sprites/white.png<>res://Sprites/Frame 65.png<>res://Sprites/par-3.png<>res://Shaders/Main-Background.tres<>res://Sprites/Containers@2.png<>res://Sprites/icons@2.png<>res://Sprites/TITLE.png<>res://Sprites/Buttons@2.png<>res://Data/testData.tres<>res://Themes/Fonts/font-resources/new_dynamicfont.tres
+::res://Script/::1701209628
+AlertFrame.gd::GDScript::-1::1701209665::0::1::::<>Sprite2D<>::
+Coin.gd::GDScript::-1::1701209665::0::1::::Coin<>GridObject<>::
+EnergyBar.gd::GDScript::-1::1701209665::0::1::::<>PanelContainer<>::
+EventController.gd::GDScript::-1::1701209665::0::1::::<>Node<>::
+GameData.gd::GDScript::-1::1701209665::0::1::::GameData<>Resource<>::
+GameOver.gd::GDScript::-1::1701209665::0::1::::<>Control<>::
+GridCreator.gd::GDScript::-1::1701209665::0::1::::GridCreator<>Marker2D<>::
+GridObject.gd::GDScript::-1::1701209665::0::1::::GridObject<>Area2D<>::
+LevelManager.gd::GDScript::-1::1701209665::0::1::::<>Node2D<>::
+LowerUI.gd::GDScript::-1::1701209665::0::1::::<>Control<>::
+MainMenu.gd::GDScript::-1::1701209665::0::1::::<>Control<>::
+Meteoro.gd::GDScript::-1::1701209665::0::1::::Meteor<>GridObject<>::
+MovementIndicator.gd::GDScript::-1::1701209665::0::1::::MovementIndicator<>Sprite2D<>::
+OptionsMenu.gd::GDScript::-1::1701209665::0::1::::<>Control<>::
+Player.gd::GDScript::-1::1701209666::0::1::::Player<>Node2D<>::
+::res://Shaders/::1701209628
+Main-Background.tres::ShaderMaterial::-1::1701209665::0::1::::<><>::res://Sprites/bg.png
+Stars.tres::ShaderMaterial::-1::1701209665::0::1::::<><>::
+::res://Sprites/::1701209628
+Bad.png::CompressedTexture2D::381662885615444606::1701209628::1701211660::1::::<><>::
+bg.png::CompressedTexture2D::8832065874139220940::1701209519::1701211660::1::::<><>::
+blue-tile (1).png::CompressedTexture2D::850634788743605193::1701209519::1701211660::1::::<><>::
+blue-tile (2).png::CompressedTexture2D::4910880600407812194::1701209519::1701211660::1::::<><>::
+blue-tile (3).png::CompressedTexture2D::2523561946463912535::1701209519::1701211660::1::::<><>::
+blue-tile (4).png::CompressedTexture2D::6569971687727607747::1701209519::1701211660::1::::<><>::
+blue-tile (5).png::CompressedTexture2D::2168283780273507240::1701209519::1701211660::1::::<><>::
+Buttons@2.png::CompressedTexture2D::7983219161635818713::1701209519::1701211661::1::::<><>::
+cohete2.png::CompressedTexture2D::5340531520200494297::1701209519::1701211660::1::::<><>::
+Containers@2.png::CompressedTexture2D::6688951575214371120::1701209519::1701211662::1::::<><>::
+dialog_frame.png::CompressedTexture2D::8738978952602787682::1701209628::1701211660::1::::<><>::
+directions.png::CompressedTexture2D::5298992762459734420::1701209628::1701211660::1::::<><>::
+Frame 47.png::CompressedTexture2D::7380757298268243196::1701209519::1701211660::1::::<><>::
+Frame 64.png::CompressedTexture2D::1569055053461602795::1701209628::1701211660::1::::<><>::
+Frame 65.png::CompressedTexture2D::8695263768707553445::1701209628::1701211660::1::::<><>::
+frames.png::CompressedTexture2D::618741436697743876::1701209628::1701211660::1::::<><>::
+GAME OVER.png::CompressedTexture2D::2152262352057755767::1701209628::1701211660::1::::<><>::
+Good.png::CompressedTexture2D::4047766830945492922::1701209628::1701211660::1::::<><>::
+Icon.png::CompressedTexture2D::673602555619029371::1701209628::1701211660::1::::<><>::
+icons@2.png::CompressedTexture2D::5058223128516115001::1701209519::1701211660::1::::<><>::
+item-point.png::CompressedTexture2D::489481059215295076::1701209628::1701211660::1::::<><>::
+meteoro.png::CompressedTexture2D::1010151756496805883::1701209519::1701211660::1::::<><>::
+par-3.png::CompressedTexture2D::4281798407933669745::1701209628::1701211660::1::::<><>::
+par-4.png::CompressedTexture2D::8416895459478209974::1701209628::1701211660::1::::<><>::
+particles.png::CompressedTexture2D::969489889190794148::1701209628::1701211660::1::::<><>::
+point.png::CompressedTexture2D::749600704911278969::1701209628::1701211660::1::::<><>::
+rasho.png::CompressedTexture2D::8861953613037728754::1701209628::1701211660::1::::<><>::
+simbols-sprites.png::CompressedTexture2D::4516379104801850777::1701209628::1701211660::1::::<><>::
+stars.png::CompressedTexture2D::6658980128605731224::1701209628::1701211660::1::::<><>::
+Texture.png::CompressedTexture2D::3564885007745005275::1701209519::1701211660::1::::<><>::
+texuture-transition.png::CompressedTexture2D::502387491708037457::1701209628::1701211660::1::::<><>::
+TITLE.png::CompressedTexture2D::9110617498033051683::1701209628::1701211660::1::::<><>::
+white.png::CompressedTexture2D::9132123875199306115::1701209519::1701211660::1::::<><>::
+::res://Themes/::1701209628
+main-theme.tres::Theme::-1::1701209519::0::1::::<><>::res://Themes/Fonts/conthrax-sb.ttf<>res://Themes/Styles/buttons_styleboxtexture.tres
+STEM_1_theme.tres::Theme::-1::1701209665::0::1::::<><>::res://Themes/Fonts/conthrax-sb.ttf<>res://Themes/Styles/container_styleboxtexture.tres<>res://Sprites/Containers@2.png<>res://Themes/Styles/buttons_styleboxtexture.tres<>res://Themes/Styles/danger_styleboxtexture.tres<>res://Themes/Fonts/font-resources/new_dynamicfont.tres
+::res://Themes/Fonts/::1701209628
+Conthrax Book.otf::FontFile::4098165445831093545::1701209628::1701211660::1::::<><>::
+Conthrax Heavy.otf::FontFile::5705572481108710162::1701209628::1701211660::1::::<><>::
+conthrax-sb.ttf::FontFile::8124835073150180379::1701209519::1701211660::1::::<><>::
+norwester.otf::FontFile::2783197948677245832::1701209519::1701211660::1::::<><>::
+Reef.otf::FontFile::1415960185260283460::1701209519::1701211660::1::::<><>::
+::res://Themes/Fonts/font-resources/::1701209628
+conthrax-120.tres::FontFile::-1::1701209665::0::1::::<><>::res://Themes/Fonts/conthrax-sb.ttf
+new_dynamicfont.tres::FontFile::-1::1701209665::0::1::::<><>::res://Themes/Fonts/conthrax-sb.ttf
+::res://Themes/Styles/::1701209628
+buttons_styleboxtexture.tres::StyleBoxTexture::-1::1701209665::0::1::::<><>::res://Sprites/Buttons@2.png
+container_styleboxtexture.tres::StyleBoxTexture::-1::1701209665::0::1::::<><>::res://Sprites/Containers@2.png
+Conthrax Heavy.otf::FontFile::1588535436872376411::1701209628::1701211660::1::::<><>::
+danger_styleboxtexture.tres::StyleBoxTexture::-1::1701209665::0::1::::<><>::res://Sprites/Buttons@2.png
