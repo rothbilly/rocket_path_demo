@@ -4,14 +4,14 @@ var _energy :int = 3
 var active_panel :int = 0
 var _energy_load :int = 0
 
-@export(Array, NodePath) onready var movements
+export(Array, NodePath) onready var movements
 
 
 func _ready():
 	initiial_movements()
 	set_active(active_panel)
 	
-	EventController.connect("_add_coin", Callable(self, "add_energy"))
+	EventController.connect("_add_coin",self,"add_energy")
 	pass
 
 
@@ -63,13 +63,13 @@ func execute_movements():
 	for movement in movements:
 		if movement.action == MovementIndicator.ACTION.left:
 			EventController.emit_signal("left_button", false)
-			await get_tree().create_timer(0.5).timeout
+			yield(get_tree().create_timer(0.5),"timeout")
 		if movement.action == MovementIndicator.ACTION.go:
 			EventController.emit_signal("front_button", Vector2(0,-1))
-			await get_tree().create_timer(0.5).timeout
+			yield(get_tree().create_timer(0.5),"timeout")
 		if movement.action == MovementIndicator.ACTION.right:
 			EventController.emit_signal("right_button", true)
-			await get_tree().create_timer(0.5).timeout
+			yield(get_tree().create_timer(0.5),"timeout")
 	clear_panel()
 	reset_select()
 	EventController.emit_signal("_on_movement_state", false)

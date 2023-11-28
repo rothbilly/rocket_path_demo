@@ -1,9 +1,9 @@
 extends Resource
 class_name GameData
 
-@export var player_nick_name: String
+export(String) var player_nick_name
 
-@export var game_coins: int
+export(int) var game_coins
 var run_playeds: int
 
 

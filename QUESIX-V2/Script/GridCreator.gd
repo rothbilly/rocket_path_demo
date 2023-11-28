@@ -1,4 +1,4 @@
-extends Marker2D
+extends Position2D
 class_name GridCreator
 
 const METEOR: PackedScene = preload("res://Scenes/Meteoro.tscn")
@@ -11,9 +11,9 @@ var main_dir: Dictionary = {}
 var player_pos = Vector2(3,0)
 var steps: int 
 
-@export (int, 3, 10) var render_column: int = 9
-@export var row_gridsize: int = 7 # (int, 3, 9)
-@export var my_seed: int = 131 # (int, 100, 999)
+export (int, 3, 10) var render_column: int = 9
+export(int, 3, 9) var row_gridsize: int = 7
+export(int, 100, 999) var my_seed: int = 131
 
 var random_seed = rand_seed(my_seed)
 
@@ -21,8 +21,8 @@ func _init():
 	pass
 
 func _ready():
-	EventController.connect("update_timer", Callable(self, "_update_all"))
-	EventController.connect("_on_movement_state", Callable(self, "_update_all"))
+	EventController.connect("update_timer", self, "_update_all")
+	EventController.connect("_on_movement_state", self,"_update_all")
 	
 	randomize()
 	#print(random_seed)

@@ -1,8 +1,8 @@
 extends Control
 
-@export var player_data: Resource = player_data as GameData
-@export(NodePath) onready var name_setup = get_node(name_setup)
-@export(NodePath) onready var display_text = get_node(display_text) as Label
+export(Resource) var player_data = player_data as GameData
+export(NodePath) onready var name_setup = get_node(name_setup)
+export(NodePath) onready var display_text = get_node(display_text) as Label
 
 func _ready():
 	if player_data.player_nick_name == "":
@@ -18,8 +18,8 @@ func _on_Exit_button_down():
 
 func _on_Play_button_down():
 	#$AnimationPlayer.play_backwards("Start")
-	await get_tree().create_timer(1.3).timeout
-	get_tree().change_scene_to_file("res://Scenes/Level.tscn")
+	yield(get_tree().create_timer(1.3),"timeout")
+	get_tree().change_scene("res://Scenes/Level.tscn")
 	
 	
 func _enter_nickname():

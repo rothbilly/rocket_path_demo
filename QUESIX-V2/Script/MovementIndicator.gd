@@ -1,14 +1,14 @@
-extends Sprite2D
+extends Sprite
 class_name MovementIndicator
 
 enum STATE{selected, active, playing, success, error, blocked}
 enum ACTION{left, go, right, nothing}
 
-@export (NodePath) onready var animation_tree = get_node(animation_tree) as AnimationTree
-@onready var animation_state = animation_tree["parameters/playback"] as AnimationNodeStateMachinePlayback
+export (NodePath) onready var animation_tree = get_node(animation_tree) as AnimationTree
+onready var animation_state = animation_tree["parameters/playback"] as AnimationNodeStateMachinePlayback
 
-@export var frame_state: STATE
-@export var action: ACTION
+export(STATE) var frame_state
+export(ACTION) var action
 
 
 func _ready():
@@ -56,17 +56,17 @@ func setup_state(new_state) -> void:
 func setup_action(new_action) -> void:
 	match new_action:
 		ACTION.go:
-			$Sprite2D.frame = 0
+			$Sprite.frame = 0
 			pass
 		ACTION.left:
-			$Sprite2D.frame = 1
+			$Sprite.frame = 1
 			pass
 		ACTION.right:
-			$Sprite2D.frame = 2
+			$Sprite.frame = 2
 			pass
 		ACTION.nothing:
 			animation_state.travel("Clear")
-			$Sprite2D.frame = 3
+			$Sprite.frame = 3
 			pass
 	action = new_action
 	

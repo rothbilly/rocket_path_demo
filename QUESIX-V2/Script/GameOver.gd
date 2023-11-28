@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	EventController.connect("_on_dead", Callable(self, "_on_game_over"))
+	EventController.connect("_on_dead", self, "_on_game_over")
 	pass # Replace with function body.
 
 func _on_game_over():

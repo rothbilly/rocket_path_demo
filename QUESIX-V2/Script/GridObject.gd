@@ -1,7 +1,7 @@
 extends Area2D
 class_name GridObject
 
-@export(NodePath) onready var tween_node_reference =get_node(tween_node_reference) as Tween
+export(NodePath) onready var tween_node_reference =get_node(tween_node_reference) as Tween
 
 func move_down() -> void:
 	if tween_node_reference is Tween:

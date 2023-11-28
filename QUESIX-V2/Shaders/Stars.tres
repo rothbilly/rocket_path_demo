@@ -10,10 +10,10 @@ input_name = "uv"
 
 [sub_resource type="VisualShaderNodeVectorOp" id=4]
 
-[sub_resource type="VisualShaderNodeFloatOp" id=5]
+[sub_resource type="VisualShaderNodeScalarOp" id=5]
 operator = 2
 
-[sub_resource type="VisualShaderNodeFloatParameter" id=6]
+[sub_resource type="VisualShaderNodeScalarUniform" id=6]
 uniform_name = "velocity"
 
 [sub_resource type="VisualShader" id=7]
@@ -72,7 +72,7 @@ nodes/vertex/6/node = SubResource( 5 )
 nodes/vertex/6/position = Vector2( -260, 300 )
 nodes/vertex/7/node = SubResource( 6 )
 nodes/vertex/7/position = Vector2( -580, 340 )
-nodes/vertex/connections = PackedInt32Array( 4, 0, 5, 0, 3, 0, 5, 1, 5, 0, 0, 1, 2, 0, 6, 0, 6, 0, 3, 1, 7, 0, 6, 1 )
+nodes/vertex/connections = PoolIntArray( 4, 0, 5, 0, 3, 0, 5, 1, 5, 0, 0, 1, 2, 0, 6, 0, 6, 0, 3, 1, 7, 0, 6, 1 )
 
 [resource]
 shader = SubResource( 7 )

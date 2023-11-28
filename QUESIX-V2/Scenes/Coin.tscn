@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Script/Coin.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/point.png" type="Texture2D" id=2]
+[ext_resource path="res://Sprites/point.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-size = Vector2( 32, 32 )
+extents = Vector2( 32, 32 )
 
 [node name="Coin" type="Area2D"]
 script = ExtResource( 1 )
 tween_node_reference = NodePath("Tween")
 point_to_add = 100
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]

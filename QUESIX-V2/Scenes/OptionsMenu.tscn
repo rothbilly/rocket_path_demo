@@ -1,17 +1,17 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Themes/STEM_1_theme.tres" type="Theme" id=1]
-[ext_resource path="res://Sprites/Containers@2.png" type="Texture2D" id=2]
-[ext_resource path="res://Sprites/icons@2.png" type="Texture2D" id=3]
-[ext_resource path="res://Themes/Fonts/font-resources/conthrax-120.tres" type="FontFile" id=4]
+[ext_resource path="res://Sprites/Containers@2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/icons@2.png" type="Texture" id=3]
+[ext_resource path="res://Themes/Fonts/font-resources/conthrax-120.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Script/OptionsMenu.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
 region_rect = Rect2( 728, 82, 614, 108 )
-offset_left = 34.4018
-offset_right = 35.9518
-offset_top = 36.3465
+margin_left = 34.4018
+margin_right = 35.9518
+margin_top = 36.3465
 expand_margin_left = 12.0
 expand_margin_right = 12.0
 expand_margin_top = 12.0
@@ -39,10 +39,10 @@ __meta__ = {
 }
 
 [node name="PausePanel" type="Panel" parent="ColorRect"]
-offset_left = 168.0
-offset_top = 674.926
-offset_right = 984.0
-offset_bottom = 1698.93
+margin_left = 168.0
+margin_top = 674.926
+margin_right = 984.0
+margin_bottom = 1698.93
 theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -50,8 +50,8 @@ __meta__ = {
 
 [node name="Panel" type="Panel" parent="ColorRect/PausePanel"]
 anchor_right = 1.0
-offset_bottom = 115.0
-theme_override_styles/panel = SubResource( 1 )
+margin_bottom = 115.0
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -59,9 +59,9 @@ __meta__ = {
 [node name="Label" type="Label" parent="ColorRect/PausePanel/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -2.1189
-offset_bottom = -2.1189
-theme_override_fonts/font = ExtResource( 4 )
+margin_top = -2.1189
+margin_bottom = -2.1189
+custom_fonts/font = ExtResource( 4 )
 text = "PAUSA"
 align = 1
 valign = 1
@@ -73,32 +73,32 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -219.941
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_bottom = 50
+margin_top = -219.941
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="ColorRect/PausePanel/MarginContainer"]
-offset_left = 282.0
-offset_top = 49.0
-offset_right = 533.362
-offset_bottom = 168.941
+margin_left = 282.0
+margin_top = 49.0
+margin_right = 533.362
+margin_bottom = 168.941
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_constants/h_separation = 0
+custom_constants/hseparation = 0
 text = "  SALIR  "
 
 [node name="TextureButton" type="TextureButton" parent="ColorRect/PausePanel"]
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -65.0
-offset_top = -63.0
-offset_right = 67.0
-offset_bottom = 61.0
+margin_left = -65.0
+margin_top = -63.0
+margin_right = 67.0
+margin_bottom = 61.0
 texture_normal = SubResource( 2 )
 expand = true
 stretch_mode = 4

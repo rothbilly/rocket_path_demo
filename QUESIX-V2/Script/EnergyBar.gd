@@ -1,6 +1,6 @@
 extends PanelContainer
 
-@export(Array, NodePath) onready var movements 
+export(Array, NodePath) onready var movements 
 
 
 func _ready():
