@@ -50,7 +50,6 @@ margin_bottom = 43.7055
 
 [sub_resource type="StreamTexture" id=8]
 flags = 4
-load_path = "res://.import/Buttons@2.png-4a82af6cc04caecbecd31be986a9172f.stex"
 
 [sub_resource type="StyleBoxTexture" id=9]
 texture = SubResource( 8 )
